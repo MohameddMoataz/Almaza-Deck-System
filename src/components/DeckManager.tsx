@@ -589,17 +589,15 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
         level: numberFromDraft(powerOfChaosDraft.level)
       }
     : displayedDetail;
-  const arabic = useArabicCardText(locale, [
-    ...(liveDetail ? [
+  const selectedArabicTexts = liveDetail ? [
       ...(liveDetail.descriptionAr ? [] : [liveDetail.description]),
       ...(liveDetail.nameAr ? [] : [liveDetail.name]),
       liveDetail.type
-    ] : []),
-    ...results.flatMap((card) => [card.name, card.type]),
-    ...cards.map((card) => card.cardName),
-    ...savedSets.flatMap((set) => set.cards.map((card) => card.name)),
-    ...Object.values(resolvedSetCards).flatMap((card) => [card.name, card.type])
-  ]);
+    ] : [];
+  const arabic = useArabicCardText(locale, [
+    ...selectedArabicTexts,
+    ...results.flatMap((card) => [card.name, card.type])
+  ], selectedArabicTexts);
   function cardName(name: string) {
     return locale === "ar" ? powerOfChaosCards[name.toLowerCase()]?.nameAr || arabic.text(name) : name;
   }
@@ -972,8 +970,8 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
             <h2 className="panel-title">{t(locale, "cardDetails")}</h2>
             {arabic.loading ? <p className="tiny-meta" role="status">{t(locale, "translatingCards")}</p> : null}
             {arabic.failed ? (
-              <div className="tiny-meta" role="status">
-                {t(locale, "translationUnavailable")}
+              <div className="tiny-meta translation-status" role="status">
+                <span>{t(locale, "translationUnavailable")}</span>
                 <button type="button" onClick={arabic.retry}>{t(locale, "retryTranslation")}</button>
               </div>
             ) : null}

@@ -13,6 +13,11 @@ const cacheSchema = z.object({ source: z.string(), translation: z.string().min(1
 const responseSchema = z.tuple([
   z.array(z.array(z.unknown())),
 ]).rest(z.unknown());
+const memoryResponseSchema = z.object({
+  responseData: z.object({ translatedText: z.string() }),
+  responseStatus: z.union([z.number(), z.string()]),
+  quotaFinished: z.boolean().optional()
+});
 const pending = new Map<string, Promise<string>>();
 let active = 0;
 const waiting: Array<() => void> = [];
@@ -29,15 +34,41 @@ async function withSlot<T>(work: () => Promise<T>): Promise<T> {
   }
 }
 
-async function translateRemote(source: string) {
-  // Keep long effects intact while staying within the provider's per-request limit.
-  const translationSource = source
+function translationSource(source: string) {
+  return source
     .replace(/\bTribute Summon(ed|ing)?\b/gi, (_, suffix: string | undefined) => `Summon${suffix ?? ""} by sacrifice`)
     .replace(/\bTributes\b/gi, "sacrifices")
     .replace(/\bTribute\b/gi, "sacrifice");
-  const chunks = translationSource.match(/[\s\S]{1,3000}(?:\s|$)|[\s\S]{1,3000}/g) ?? [];
+}
+
+function translationChunks(source: string, limit: number) {
+  return source.match(new RegExp(`[\\s\\S]{1,${limit}}(?:\\s|$)|[\\s\\S]{1,${limit}}`, "g")) ?? [];
+}
+
+async function translateWithMyMemory(source: string) {
   const translated: string[] = [];
-  for (const chunk of chunks) {
+  for (const chunk of translationChunks(translationSource(source), 450)) {
+    const params = new URLSearchParams({ q: chunk, langpair: "en|ar" });
+    const response = await fetch(`https://api.mymemory.translated.net/get?${params}`, {
+      cache: "no-store",
+      signal: AbortSignal.timeout(8000),
+      headers: { "User-Agent": "Almaza-Deck-System/1.0" }
+    });
+    if (!response.ok) throw new Error("Fallback translation is temporarily unavailable.");
+    const payload = memoryResponseSchema.parse(await response.json());
+    const text = payload.responseData.translatedText.trim();
+    if (String(payload.responseStatus) !== "200" || payload.quotaFinished || !text || text === chunk) {
+      throw new Error("Fallback translation returned no Arabic text.");
+    }
+    translated.push(text);
+  }
+  return translated.join(" ");
+}
+
+async function translateWithGoogle(source: string) {
+  // Keep long effects intact while staying within the provider's per-request limit.
+  const translated: string[] = [];
+  for (const chunk of translationChunks(translationSource(source), 3000)) {
     const params = new URLSearchParams({ client: "gtx", sl: "en", tl: "ar", dt: "t", q: chunk });
     const response = await fetch(`https://translate.googleapis.com/translate_a/single?${params}`, {
       cache: "no-store",
@@ -49,7 +80,17 @@ async function translateRemote(source: string) {
     if (!text.trim()) throw new Error("Empty translation.");
     translated.push(text);
   }
-  return normalizeArabicCardTerms(source, translated.join(" ")
+  return translated.join(" ");
+}
+
+async function translateRemote(source: string) {
+  let translation: string;
+  try {
+    translation = await translateWithMyMemory(source);
+  } catch {
+    translation = await translateWithGoogle(source);
+  }
+  return normalizeArabicCardTerms(source, translation
     .replace(/ارسم/g, "اسحب")
     .replace(/الفيوجن|الاندماج/g, "الدمج")
     .replace(/سطح السفينة/g, "المجموعة"));

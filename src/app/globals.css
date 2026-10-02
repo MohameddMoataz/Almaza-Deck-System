@@ -145,6 +145,13 @@ textarea {
   padding: 0 10px;
 }
 
+.translation-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .nav-button {
   min-height: 40px;
   display: inline-flex;

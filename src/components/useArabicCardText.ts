@@ -4,20 +4,21 @@ import { useEffect, useRef, useState } from "react";
 import { arabicCardText, normalizeArabicCardTerms } from "@/lib/arabicCardText";
 import type { Locale } from "@/lib/i18n";
 
-export function useArabicCardText(locale: Locale, texts: string[]) {
+export function useArabicCardText(locale: Locale, texts: string[], requiredTexts: string[] = []) {
   const [translations, setTranslations] = useState<Record<string, string>>({});
   const known = useRef<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
-  const [failed, setFailed] = useState(false);
+  const [failedTexts, setFailedTexts] = useState<Set<string>>(() => new Set());
   const [attempt, setAttempt] = useState(0);
   const serialized = JSON.stringify([...new Set(texts.filter(Boolean))]);
+  const requiredSerialized = JSON.stringify([...new Set(requiredTexts.filter(Boolean))]);
 
   useEffect(() => {
     if (locale !== "ar") return;
     const controller = new AbortController();
     const missing = (JSON.parse(serialized) as string[])
       .filter((text) => !arabicCardText[text] && !known.current[text] && /[a-z]/i.test(text));
-    setFailed(false);
+    setFailedTexts(new Set());
     setLoading(missing.length > 0);
     const timer = setTimeout(async () => {
       try {
@@ -33,10 +34,12 @@ export function useArabicCardText(locale: Locale, texts: string[]) {
           if (controller.signal.aborted) return;
           Object.assign(known.current, payload.translations);
           setTranslations({ ...known.current });
-          if (payload.failed.length) setFailed(true);
+          if (payload.failed.length) {
+            setFailedTexts((current) => new Set([...current, ...payload.failed]));
+          }
         }
       } catch {
-        if (!controller.signal.aborted) setFailed(true);
+        if (!controller.signal.aborted) setFailedTexts(new Set(missing));
       } finally {
         if (!controller.signal.aborted) setLoading(false);
       }
@@ -44,10 +47,12 @@ export function useArabicCardText(locale: Locale, texts: string[]) {
     return () => { clearTimeout(timer); controller.abort(); };
   }, [locale, serialized, attempt]);
 
+  const required = JSON.parse(requiredSerialized) as string[];
+
   return {
     text: (source: string) => locale === "ar" ? normalizeArabicCardTerms(source, arabicCardText[source] ?? translations[source] ?? source) : source,
     loading: locale === "ar" && loading,
-    failed: locale === "ar" && failed,
+    failed: locale === "ar" && required.some((text) => failedTexts.has(text)),
     retry: () => setAttempt((value) => value + 1)
   };
 }
