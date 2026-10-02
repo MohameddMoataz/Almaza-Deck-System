@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Aqua Chorus",
+    "type": "Trap Card",
+    "description": "If there are monsters with the same name on the field, those monsters gain 500 ATK/DEF."
+  },
+  {
+    "name": "Arcana Knight Joker",
+    "image": "https://ms.yugipedia.com//2/29/ArcanaKnightJoker-STP3-EN-C-UE.png",
+    "artworkImage": "https://static.wikia.nocookie.net/yugioh/images/8/80/ArcanaKnightJoker-OW.png/revision/latest?cb=20140529190735",
+    "type": "Fusion Monster",
+    "description": "\"Queen's Knight\" + \"Jack's Knight\" + \"King's Knight\"\r\nA Fusion Summon of this card can only be done with the above materials. Once per turn, when a Spell/Trap Card, or monster effect, is activated that targets this face-up card on the field (Quick Effect): You can discard the same type of card (Monster, Spell, or Trap); negate the effect.",
+    "atk": 3800,
+    "def": 2500,
+    "level": 9
+  },
+  {
+    "name": "Block Attack",
+    "image": "https://images.ygoprodeck.com/images/cards/25880422.jpg",
+    "artworkImage": "https://yugioh.fandom.com/wiki/Special:Redirect/file/BlockAttack-OW.png",
+    "type": "Spell Card",
+    "description": "Target 1 face-up Attack Position monster your opponent controls; change that target to face-up Defense Position.",
+    "atk": null,
+    "def": null,
+    "level": null
+  },
+  {
+    "name": "Blue-Eyes White Dragon",
+    "type": "Normal Monster",
+    "description": "This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale.",
+    "atk": 3000,
+    "def": 2500,
+    "level": 8
+  },
+  {
+    "name": "Fiber Jar",
+    "image": "https://images.ygoprodeck.com/images/cards/78706415.jpg",
+    "artworkImage": "https://yugioh.fandom.com/wiki/Special:Redirect/file/FiberJar-OW.png",
+    "type": "Flip Effect Monster",
+    "description": "FLIP: Each player shuffles all cards from their hand, field, and Graveyard into the Deck, then draws 5 cards.",
+    "atk": 500,
+    "def": 500,
+    "level": 3
+  },
+  {
+    "name": "Foolish Burial",
+    "image": "https://ms.yugipedia.com//5/55/FoolishBurial-LAVD-EN-C-1E.png",
+    "artworkImage": "https://static.wikia.nocookie.net/yugioh/images/6/65/FoolishBurial-TF04-EN-VG.png/revision/latest/scale-to-width-down/250?cb=20160822181416",
+    "type": "Spell Card",
+    "description": "Send 1 monster from your Deck to the GY.",
+    "atk": null,
+    "def": null,
+    "level": null
+  },
+  {
+    "name": "Gilford the Lightning",
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAlAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgQHAAIDAQj/xABDEAABAwMCAwUFBQUHAgcAAAABAgMEAAUREiEGMUETFCJRYTJxgZGxByNCobIVJFLB0RYlM2JygvBU4TREVWRzdJL/xAAaAQACAwEBAAAAAAAAAAAAAAADBQECBAYA/8QALREAAgECBAUDBAIDAAAAAAAAAQIAAxEEEiExEyIyQVEUYYEFJDRxI6FCQ5H/2gAMAwEAAhEDEQA/AIn2ZDVKmeZnO7/7RXOXJeRNuq1vusMQiAOz9rlqKvXnj4GtPs4ktwkzpDus6JjmyBnOwrrPXEnOPLXGlp7VHZuaMp1p8j59fmaW1LcRgY4oluGtpirw/wB9LZQ2P3lLJO+cKb15945Vqq8KiuTMJbWWVaBjVlROnG+Mc1AVy0w3JKnFszElTge8ORhYTpGPhU0dxS0+33WWpMjBc1ajk4A5+4VSyeIUuwFgZGn3WTFcUiSGkuoWgKXqOkpUCQfPYgitUXt9hJeMZGlMZEh1KlkKAJOQPcBnfGa9cRHcc1lmatZcCytYOSQMD4Y6Vp3RhKQnukvsw2lvT4tJSDkAjqMmpypbaRmfzJlxmyGWkusIQtKlISQskY1EAcvfmokm7PNSCy4hvWl9lrYqIOsgZz6ZqY46zJjFuTGladQX4UadwQR+YFQHe7PSHFqZlEuOtuqwk7KRy/lVVCAWIhGdieUyfZbi6+86VJRpSpSfCFZ2UQOexzjpyrTvzjNvlyCouKRJcSNecBIXgDb0qPDcZjlQbRLKCVEpOSBk5O3vri4iOpLiOymlK1FRSMkAk5JqOW/tIs2musnIvC3HQEobQz25j6lKOpahnOBjzHKtIN6eklkR2mw45HU6QrVgEKAxnywa4Yjdsl3u0rUHe10pB068Eavfg1tHRHhrbLTEpPZtFseEkhJOT8dudSQniVGbzOqL+82zDkPR20tSEa1lCyeyTgeI+YyQPdvW7l7fcYU43FbdIajuBCVEa+0XpIHuryL3HsmUiLKKWmS0lGjIKTjIPnyFcENxGHQAxLCQGkeX+Gcp299WHD8SDnvYGEo05M51tmIGiXStTa1qOAhCUkkgb5yoDH50QiS247AnpUglCEFK07pSVKCSQfnvUeKq34yIUtC+1U6lbSSClSgArHoetYLhDitoji3vORgkNFlxJ8aenx5b1RwpGkoHc3BhXil9hm1qmNXFuIdQUlwOhJA30blB/Gny3FLdrnvXRuzzpA+9eYJdUBgFWcE/HGajKSlU+QudKTNgyFIJiyLYfAE+ylOF6RgHGamLltSJ0dESKYsdpKkpbCMJQOgFFYqFAG8DRV8+sr+KpXbTcb/vbn1rK3t5AVMykH96c3PvrKd0+kRQw5jHHgSKp2JcxnGJy/0pphcjqSdwcD0oXwFs1dkjI/vBf6U0Z4puBgx2UNbKcOCoDkMUkrU89YgR1RrcOkpM1eiZYC0gCoAWvX4jy8q4cQMXGzwETblNcZiuLS2lYSCAogkZxy5HnQdoqeQHWrg66g9W0hXx2qHwrLuYWljA+wJjTFbKl+HfPWi8eMOSxvSoYFyYjNyWbgXY61aVOtlKktnyXj2fjivLpLnWiOHZ11CG8e0lSFfQ1dcI/mAfHL4MaZ0MrVlKtCRzIPKlzjGNGtLtuXClOuyHnUtrbxkEE76t/KhMLiIXH7uPdZLueojHGfLOK2KG0Se0M8JfV1KUhQoFTCkVQxewHaaKGJYpyg/8jBerbAj2B2aua6h4JKklIyoY8hms4cgx7jZ0Sro+WVlkKWOQBIoW3Z35zZdVI1pbXo1LSBpOM7+mOvoagoT35vInOuMqVpJ7IaSR0oJwL8IjP33hBjCXy63/AFC3CLYuIkx35DoYZkqabcUnClJGPXzz16VyebaZ4uVbokpx6IpsrUojwoOdsHPvFQAh5pC2m5jqEIUUEFAAzmuIbTHaU4JjqMnxFLIznIAB+dE9IzVCQ+4tJbF5FLMCB+od4pYZs79tct0p1chx1KFNYyFBR5K322+lTb5BhNWKRNemuofSNSQjnt5DPl9KSn7jDhy8PTloeG+rsMmp7JTPjd8VKWtlCgNbjXX086qcBUVVDPsYJfqVNmGUk3jPw9ERc7Iw/dJS2Ms9oocgc9Tvzobwo2LpJlRpMh0ssPltt1QwpQ2yOfQ/lQi5T0JR2cuepSP/AI9vlXJxwRWwHLgWUaR4S2E7eorzYJ+bn6toRcU1tjp7Q2+hqPxeuDDeW9HUzrVkeFKgQBg+u9T5DJLiSjboaVo1wRClMKjLcX2pwoqb07fLem5MhC2wvblmrGkaaqpMkVuITv8AMrK3pA71k796d/VWVzhqGuXv/wCad/UayuiTpE5pr5jHDhB5bP7U5Y78vPyTUni18yURScfi+hqBwgtCmbnr5mcvHyTXW+NKK4njJJJ28tjSi/3RjnKPSAy2uL7A3xBwbKtoQNbjAU3/AK04Un8xXyywzNDy1W9qSwtGdZC9ITjnvtX2HBcS7EZUg5GgDb3V86/bNa7jA4pXEZ1Kt8od4ZQgYAJPiB88HPwIrW0wUiBof6iSniG7NrIMtSiAU6iATjqMjepHD9jXdnu8ySW4oVlS+qz5Culi4YkTlh2QezYCsctRX6AdaYbo4xa7cp5Md15pGGxjIQgkbBShtn/KKz1av+FLeb8Phv8AbiOkdj3h2DDS8lNvi9o4Ep2aQARpHpipTdllrjuOMKbisAEnt/ANv8uCT7sD31E4BEq2qF6uDDwuElKmLZAaSUK3OnURzPI4z/CTTXxHF4hH7OjILbzzqFrebZIHYqRpKNauuSdz8Bnri9KwO9z3m2p9TuOQZR28yA7aHbTBkWx+SiVImusAJbQUdiEpKlpIyc+2kdPa5UBnras1yfiLKRh5KSnO4yBg48qL3CfZrzPisT5r6FJWtUia06UOaQFZwR0yj6CoBs8bizi1SpKhZ4j8EaUtueIK/ApQIwrIBz7q3VMOtWmEEWYbGNRrmq+t4LdkDvT4SrSoKK0nG4J2B+aqnWm4QGHnP2jhEMNBTSU/iU3nAz66lfKoXGdmuPC+FXDQ405gNy2/YdUPorrj64qvZs9bpWk5SHCCU6sgAdKzUcKQQTpaMcfjKVWjk3zR+a4kiXBSn3IaAXny2yVhJRpA3VjAI6Ab+/NdJ1zDob7dwIZQnwtoASVb88D2Ry9aQkPhD8Fkr0pSnxKPIFRyT9KNT2gphtxiS27qV7On/Ewep8qJXpAtczPgiiKbLzCMUBhuWy1KWhKfH2jaOiEjYKI+Z9dq3L3eJIZgNglPiU+oZI9c9KCKnqU32GvSkH7xWf8Anyrs3dB4YsJBJUckJ3KvU1gak17mO0rINt+8m3XszcYvZq7QIABUeat+dM7DJcQnJxtypLUX27hF7YICyobJVnHvp5hOntW8bDatDi1NBFoa9aoRKuaXofmJ8pTn6qytTgy5p/8AdO/qNeU/TpE5puoxz4Rby1cTp2E5Y/JNSb4pKH4u49o7H3Gt+B0drFugxzuDn0TWvEEbsZsQDfKjzPoaT2+5Mc3+1AjrwhxQpDqGH/Y5KPkKL/aRZG7xZ25SWi65DXrCU/jQdlD6H4UgWFSltp8JS8g4O2NQ6KGeYqzOH5qZVvXAkYK20YA/iQenw5fKtRUOpHYzEGamwddxEuRZnbJB7IskTJCdJUhOQy2rmlHqRkE+vkN1OdNekcSW6K42EsxFZbYUNkEczjz9fWrRtF1eRdJFsmuJU7HADa3N8gjwLHln2T6pNKdyhz/7WtpuTCCgOYK206SpKuua9mpLRKKusxVeNVr8R2J12hawXC0pVNmibDNyba7Ntp1zQppHNSz1yo5O3QJpQVeZF3va40S8Odn4XvuEaNZbVq0jPPlkDzJrvxKxbY1yULTEjOgsLemNyHclAQglSMDc7DGTsCU9RWNybB+xbY9FgylTpTJW1pUG9LiU6lHURvjGeX1oIUFf1NwYg6axLvFvfsVxX3iShZbWQw40R+8JKwdSc7A4XnBone40qxuw7pGWuVbZ8dTSMk5b1eIp36pIJAPLFbxNRis3GS7HlJmLSDEWgqSEHfKh0TsR8M9KkW+SlmyXW33RazC72XLeFL1KS4glKkAjnkKTg9SD51ZHzfuFqUVpgEG4MCNcVXEWaRbEYnR5KNBjShkIz+ME8sH6ik+Xap0VAckRXUN5xrxlPzG1WixdFriMvQGoTc1lpKhqBGGygZUd9gc4z5+6hV0QtUdV5goYtRkrGIzSlLCln2hjYYI8WemwxvsQuRtMyKmzGV26rW6og8tqMRGnkwkHB8ht59B60aYltXQKZnRWSUeytKMBXyHh/Ouz8+NAbKktrW7p0oWWyEMj/Lt+dAqVWOmWMMNSpLd+JBC4RbQlUpzQejQ548z5VjM1cZpxMNIQlXtO+nvrDLjbOqjKkEnb73CSfUAb/OtEsybi/oQy/IcxkMsNqVpT6ADlUBSeqFaoBqpkq0upXIbUFlZDoyTVmQ0AKStRGdqrKxKQXkoQ2Ae2AUFDBBHMVZjA0pQduQ2NDxQtllcKxbOb95VBVolzQf8AqnP1V7UlqAJD8xzzlO/qNZTpOkRI25jpwTJ7sxcUkZBnLyfgmt769206NkgpKyPhg17wdH7SDcx17+59BXG8tkSo+2NJIOPPBpOfyTHAscJ8RisFwm8QXJxl1KkPx2e1Qh1JBwMAjJ6H64NSZF1MB9t+KdS0b48xyKf+cselFuNOIo9mMEFSu8NEKJQfEpOjkr5/lQlMZria1G+QFsiYQS7GUrSFkc1jY4JGNsfGjUi6305TFoYXAvrO0+chUqJf4oS4WhkoVtrbPNJ+vpj0pw4ckxb5DRcmkdpHkjtEKWBqSf4T7qp92bLt7j0NcdC0OqUWHEu/dqV1AOM7+WM5Jp9+yZ1hm2PW+M86pLSgPGnSdaQNW3TmNugqxQFtYV1stxFL7QprUZ65rS6EOKjiKpRGSkF5xxePMnwjHrQmwOvzZkG4yNEePdFhDDa1aiEt/drUB0SAr8qJcZ8NW6HcOJJ9ycMmZJWE2+Ofa1KPJI6n2fnSxY5FyRfoPD9ybbZVDSgLQN1rSg69AI6jKlY6n31C5TdRIIIAabRJEmNxcIUZrS726uyW4vstTjSlJIGAc50kYH88VB4jU5GujqFsKMeRIEnsyNK8DfCcbDdR6dB5mmRm49tPcuiYwMfS45Kb0awErRgkEchqJVn3V4I647AcfYeuUqTBS484ghKYicKJUVYwCo4x1wCd69m5haXyjKc0N2fhiM/LVHjKLMmNCYWqSkglDZzqyPUKHyNROKbdGhWKNBi4bVIfS2znGUNpO2fMlXiPqR5VN4VkSFPyFvN6ZEmO6rs9yRpUw0APPATj35oPxNKYTcsr5sNOIc8BCm15IRkHfYYHuNUckqLSAAH5oHsMJAKWwRnfUVckKB5f099N0qLCDHZONENFI1qWnSADy5+Z2+dK1jund93sg5Ksr2znn+dFpNwcMWO4kd2YdX7TqcrUgDBwDyPIY6DmahXsd57h2FrRDvzbca6OILJ0srQhCgMBaABz+BG/pV42PhCy26UENXWWh9xCXY7XbaVtAjPhOPEKqZ0NXzjWBDbSmQiRNayhQ2UnSnII8tj8qsW2WmS1dzMlu9vNjk9mFrKkISkkBW3w+O3OoxRJAtBo5UkAxc4utkC38URkQpgkvPeKUsYzrztnG2cc8UYW2pBQVDbFJUtK2uJnVulKnVyMqCQBjy2HKnhThcKUhWoHB93pQsSuVVHtN/043DERAs+ktytRH/inf1VlcrU2opllKsDvTn1rKcp0iJ26jGvg2SG2bkd957mPXYVpelhydGJyAVEn5GpHATYXbrgSM4nubfAVz4jQBLjJAx4ifyNKx+V8xtf7T4gGZIk3WQl2ctZeGxKutNXDkEG3Ow5aVBh3BAQcFB6Kz8wR5E0A4kfZbJcZGwG6h0ofw1dpSprbanFlsKGN6e4gIAEE5aiXLF/EsyVwBbHrfFkNOLWI/wB2ELxoQhSug95GSdyPcBUG+Mu8MX5u4IVoaZZ1uhOynk6VnfzWFDAPkoDenpTjLPC77i3AlK46gAeZVjYDzPoKrG88XszLkzoiqmqBDSUI9tZKwooTscElKRy238qX1gFJtHGGZnW7QoYz3HEpniSHcGrUYhUsOP6VpaOnSMjYaiQPFnkkYFVxw01Je46cblOmTMd1I7VoEnKtiseWASR64xRawcTqtt8nx3oz0eNIdJLYdKe6unPTltyAxy51pa2r5bEpnwmI78x17uoecbwFFZSDq36EJVnpQABqIWoTYeI18RWx2xJS3GloSlEhCnA24EFWpKg6yc+EnSvPkT5UOauZXZGreuO+GnZKu8zl5Qy41n/FHLIxsR0OB1o5f4rVm4ehMOSmbpcCsvyAh5KCXMpVrQrcJ0lIAGN8Yqur3cG/7fNSn16UNOanUtp0JWkb+7CuRwKqSCSJ5VYgGWRMt9wtXDMziJ2aqJPUkuQ4ICSEIVgJCwRuokpJxsCfjUbucq5Whc3iFtCbmXkBx7GnKSAU5HQYCviE+te8R8Vx7g5BQFjQ2ouPHGQdspBH+oJPwpdt0q/2dtty6OG5v3h4KLT7yvChKSpJB5oIz68xttQqVbiLfaHqYd6ejDeQ7namitzsVLSUnCcHY5wRgfEYoI+xOjSGYqnErcdXhLaF6lJz0IH0onfb+w7J7CC287NWSgsk5Uk9QVDn5VAYVJtse3Xt4lpandTCR4e08tPljIJ9M+dGUEbzO4udDGyz2JvhCI1fJjmZTqT2bRBStvmN+vU/Cmey3Ndvix1yXWSbghTssrWCttKhhACf8oA8PqfOkm6z/wBoTGX75JkiYpKVhp6MC0tONtKg5uk+ePPPlXjt0kSD2762mmdtEdsfdDbbI/F8aw1HYMSY2p4FatJQpt3M1u7cUXeB3TtOycKj2zg/xDq3V7v+b006hGKNO5GM0oSky/2jBmSsntRlGtXiCdwCR0B6U1sFSk5CSc8zV65JVSfErhqS02dV2BiPZ2nHW5K0DYynf1VlSLAy4qNIUM7yXf1V5TtdhEDdRjZ9moSbTcFZyTcHfomufGSQJsRSR+I8vca2+zM/3LPcP/qDv0TWvFBUqfEA6rP0NKx+RGoF8PKuuV0krefTnCFHdNPv2VRokp0BRAcKgFJUOXuqu2223Xy0VpbLjhHaK5D31Yv2f8Ny41wK0pWohJORnGM8/WmNOp/JrEtWn/Hyy3uJUricPqfiQe+d1PaGKhegupwQd8H38uQIqgXLl+zLxHuNoCkXL73tWFDKWVKWcaT1Gk89q+k7YpaoqB+MDCs0l/abwqxfWxJi3CPCuMZCtlBP32d9KjkYz65oVZRreacNVygC0qBEgzVypHEZDz01P3ToBLnabJTgcsDn8KdJ8x6FwK60oPoehSHWWjGWAZJVgqdOQdKQkj059KTw/wBn2iZ7nc5LaiHpClBSgBsNAH4jn4UNuF1/aMmJZhhi39o0wMLKylAOBlW2ojUT5cscqz082t5urlDYrIkR64zu9uKeceW+Q2VuqKhnOoeI+6mk8PIYhrN8eDYmMKdMlGkqWUjUhtvI8Ocgkncg9KMW64yrc9qiWDv6ZpKbeENKcTGYSrT7CRupWE5yQOXOhnEUm426cytERKFxpCZqWXgFK7RAGUYScJGk5x6VY37QWbXK20gcP8OXGCx3m9gRWXUAoZdV96r/AGdB6n5VIuvEbi5D7CUOLdUDlTJKlqSceEfwp2GcbnbehU7v15uMgw40ht99oy1iU+CUoO/PA28iaCQnrnbkd5bLzbUv7vWjcucjgfMUEUSzlzNjYhUphBr7wjw4089c5krsdIYYUVqx7APhCQP4jy9BqPSvH5sm7SZIff7y9HQVCSRzSCPZHJIBIwBQydcVvNIhoZEWMyonsQSVKXjBUsncq5j05VwjuFvZKtJIKfD1B51qGgmC2c3MNQJskxUwlrUuK04XQkj2DzOPIGjVvImFPeF6WmU5Vvj4UrQSvWtCQNS8ajqxsKarEw06hpUlShFSv2kpzr81H4bD13rBiV7x9gXIXa8JTSy9IhJYCTgIUpXLnk/0FNIKEBOnl5UoSpUN/iJlcEYRnca848vQbU2NIL7mcYA+lUqdCTJhc2Z83mLHDbrXcnsnH7y7+qvaXIFwEZUxrI2lOfWsp6nSIjYcxjt9m8gJsc1C+Znun6Vl4cK71DQdxqP0NDOBkOrhSg3/ANY4PpRW6sojyoRAJUCrJ/2mlC39SY4Ithb+0rqXYpTFzDbW5W54djjJNXtY1ybFa4sB6ShUtCQqU4lOVJPRGB5UqX648P8ADvEIS1Fdmzo68lTy9LaDzGAOfxqfww6q4XASE4JdWXDkdTTtKNOq2YbCczUxFRFCncxh4k4muCLW482w9CYSMlamVlwjzwAAn5j39Kp6/XO6LktGC9dkrXnQgK7POeeED8yc5q5eI7jabO2ld4lynXfwsNuhAR5YGwz+dUvx3d7ZKkpFnhzYQWkh4Oy9fbepH/ffy60pdP5TredDhnthtVtfvIvD0NLXeJkqM7LkBzQ41HWAoJKTkhQ/ESRgDnyqPBahxWrayi2uPXaW5ht5chIRnXhGEDkc4zqx7jTLwL9nD1zjpu927SNFIPdUAlKnFdFZ5hI57bnHSmLiPhrh6KzBDdzL0p5wR3lLd7V51ke2dJ21HO2222M71e+tpnLDtEePHmSpUp1MaQ5AUsthDL5wg8+mxHPmOW461FXEkWqLPejKcaS06y22oLAWleSpKhjcDnvtuKbZ3Dtn4eiuPtMvJL7KnEsyUaltoCk6Scb5VpXvtjoPMCjh+LfGswLlHadjeJlDuNchKjsAf4gB1293WQLSpIbWCrRCuF1u6XpEVueUjU4JClJQlOeaiMYSPlRe43qNbUSI/CTLK5HJ+ew0QloKPsMZyfTUdz086XBFnT7o3Y7a5IeU692SY5dJTrBI9B65xTvxLwmLT9mttkoQ4JasSPuyRnVgFW3PA/JfoattvI07SswhSlEnOc7551IabKFEaNSk80nyqfISZjq3pCkR5qHuzdScAE6eZ8skHPvqfCsj1wQsxQhTrKSs6TyA6+o+lVZrbzRSQHW8GNYICNTbXU6s7+80YiN9/cbjGTIluuLCGmY6Sd+nPb8qkw7Ld3dCplqQhopCg4taU5B67n+lMnCd6tHDV0ZjFlvtH0qS/IRhWjPsgeg2z5mszknYTT6inTHKbkyLxFaZVnutpiyWmmyGRhDIwE7nmep8zTlCbCA35HnSjxLDlxuJmFSHUvCQUusPJOziM4z/ACpsYcca0heCMUOr0rJwuub9ykpBUJ83Ty7y59ayu3YKelTVgkDvLnL31lO06RE7HUx44FeUxCmEDKTMc/lU2+P6pMRadwpZ2+B2qNwVhNplq07d9c/lWXjUJMUqGE6j9DSddcUR7xu1vR/EQ3Uz5txK3nHHFrVzJ3xVvcDRZLDTaYzehWjCnnMkNeuOp8hXlrsHbSgtTekY9o86dWGkMMhCU7AYGK6bhimtgb3nHVKrVGFxa0jqsFskRHY6w92j2zkvUO1xnJAJzpB5EAciaX7D9mlpVfXbu424LaFfu7D69ansfjUTySTuB5YpyhPIRISlxOdQ2FaX26CHG1IUEZ2Bxk/AVibDAuFUTZSx1REJY7/1Ot3iNlKHm2ka04wojOkenu9KqPjmyxE3Jpye3jtVOLcWFaMKGD4dsE4UOZGwBzvkWbaL2maexbbWTjxKUeQ9a4cbcJM8TwmyVOJcYBGlIyFjG3h6kZ9/MUOvRK7wuHrhjKZxcLPPkOsSlzpJQw5HekEr1pzlOdWdgM7UOld7kyJLyrVABWkZUhXhTqO4AzzNS7jKatUfu7jZkPFktNoTnLZSoo0qHltnfmMedB7UJc+QmOpEma6ElLUdKiEoz/EeiRWbbebRC/CTEB/iqIylL0ia47ojOtPaUhwFP3hGMnkr0IFOf238Vvw7kzYo8UoQw2FhxSjoUFDbCQemlWM0D4VgDhGaiYiQiRdFDSOzH3bQJ3A8ycelSftbk22Uy/LfUo3KQWgy0FgpZx7avecAfA+dUWsjsVEsyMoBMr51+Hcbotw9qw26SteTqK1eZ5AZJJPQZq2GJdntNkhwlS0QdSVFThaOh7cg6gN/5b46VVXCtrbu1z7KSpaY7TZdcKB0BGxJ5DPWtuJrqLhO0R06IrADTKM8kjlVaycQhJCtljLxLZ7k5bWrrAld/tSElCXWicJI2woHkagfZ9Z5F2vTYU2e75CnHV+wgDmSanfZ1xZBsUKbCujb70aWNJQ1gkEclYPOid44zcuMRdnslrEWEcBRJAW4fM4A9NqqqVdaaL8yrPTXmYwxxqq3o4ks0a3PpeZjs6CpCs6TrORR18tdmAk5yKreLbFwZkFtZy44dSj7yad3ULa0AqKgaHi6Zo2SMfpriqpYStbehRVMIG3enPrWURs0TtGH19TJcz/+qym69Iihuow1wOf7slDoJzn8qIcUJShll0JGpOSM8uVe1lJibYkx4BfCiCkcTXlvZE9Y2H4U/wBK5u8XX5JIFxWB/oT/AErKym2dvMScNLnSc/7X39pSXEXJYUobnQj+lQp3Et5mO65U5bqkYAJSkfQVlZXg7X3lTSTxJMDim9xm1oj3BaE6uQQnf8q7x+OuJ1OJBuzvL+BH9K9rKqXYnUy4poNhMb4mvKXJjyJpQ5LSnt1JbR955Z29TQg3u4pQ5HRIKGQSdCEpSCRtk4G/xrKyodQQNIVROAnSEPIWF+IHIJHWo8xCJ8tciWgOvOHKlnqTufzNe1lQqKDoJJ1knskxYL8aOOzZd0laQPa58zUFu3xFHdlNZWV6wDSthNkRmIzodZaSlaeRxU9u4SVKb1LBPnpGaysqyuynQwVSmjbiEoLq5tyirkK1qScA+lOU1R1georKyl2PJL6xz9OUKlhEiwKPdX//ALLv6qysrKbLsImbqM//2Q==",
+    "artworkImage": "https://static.wikia.nocookie.net/yugioh/images/f/fe/GilfordtheLightning-OW.png/revision/latest?cb=20140606143355",
+    "type": "Effect Monster",
+    "description": "You can Tribute 3 monsters to Tribute Summon (but not Set) this card. If Summoned this way: Destroy all monsters your opponent controls.",
+    "atk": 2800,
+    "def": 1400,
+    "level": 8
+  },
+  {
+    "name": "Jinzo",
+    "image": "https://images.ygoprodeck.com/images/cards/77585513.jpg",
+    "artworkImage": "https://yugioh.fandom.com/wiki/Special:Redirect/file/Jinzo-OW.png",
+    "type": "Effect Monster",
+    "description": "Trap Cards, and their effects on the field, cannot be activated. Negate all Trap effects on the field.",
+    "atk": 2400,
+    "def": 1500,
+    "level": 6
+  },
+  {
+    "name": "Metalmorph",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsSTrCbULL6QN6JR2kcXoMC_QCtVMnrH85mbdhkA9hFA&s=10",
+    "artworkImage": "https://static.wikia.nocookie.net/yugioh/images/3/3d/Metalmorph-OW.png/revision/latest?cb=20140612034151",
+    "type": "Trap Card",
+    "description": "Target 1 face-up monster on the field; equip this card to that target. It gains 300 ATK/DEF. If it attacks, it gains ATK equal to half the ATK of the attack target, during damage calculation only.",
+    "atk": null,
+    "def": null,
+    "level": null
+  },
+  {
+    "name": "Red-Eyes Black Metal Dragon",
+    "image": "https://static.wikia.nocookie.net/yugioh/images/b/bd/RedEyesBlackMetalDragon-LCJW-DE-C-1E.png/revision/latest?cb=20150625040754",
+    "artworkImage": "https://static.wikia.nocookie.net/yugioh/images/2/28/RedEyesBlackMetalDragon-OW.png/revision/latest?cb=20140618033138",
+    "type": "Effect Monster",
+    "description": "Cannot be Normal Summoned/Set. Must first be Special Summoned (from your Deck) by Tributing \"Red-Eyes B. Dragon\" equipped with \"Metalmorph\".",
+    "atk": 2800,
+    "def": 2400,
+    "level": 8
+  },
+  {
+    "name": "Seal of the Ancients",
+    "type": "Spell Card",
+    "description": "Pay 1000 Life Points. Pick up and see all face-down cards on your opponent's side of the field, then return them to their original positions. (The effects of the face-down cards are not activated)."
+  },
+  {
+    "name": "The Claw of Hermos",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI2s6wbfig6qX1J4N4NszDojOJr7KE550xXycN22s0ih4CZe5y5yU862ro&s=10",
+    "artworkImage": "https://static.wikia.nocookie.net/yugioh/images/2/25/TheClawofHermos-OW.png/revision/latest?cb=20131215220247",
+    "type": "[DRAGON/EFFECT]",
+    "description": "Toss a coin and call Heads or Tails. Call it right and this card's ATK will be doubled during this turn. Call it wrong and it will be halved during this turn.",
+    "atk": 2000,
+    "def": 1000,
+    "level": 4
+  },
+  {
+    "name": "The Eye of Timaeus",
+    "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/71ea61dc-09ba-4554-8d2d-df4074174241/d6xqq0z-7304cfc4-9539-49f3-9125-e033e9b52dd7.jpg/v1/fill/w_570,h_831,q_75,strp/the_eye_of_timaeus_anime_by_playstationscience_d6xqq0z-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODMxIiwicGF0aCI6Ii9mLzcxZWE2MWRjLTA5YmEtNDU1NC04ZDJkLWRmNDA3NDE3NDI0MS9kNnhxcTB6LTczMDRjZmM0LTk1MzktNDlmMy05MTI1LWUwMzNlOWI1MmRkNy5qcGciLCJ3aWR0aCI6Ijw9NTcwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.8jizLM8Y2Vo4KxTsP9liWBW7steZxAu_fFX4QX-RiLg",
+    "artworkImage": "https://static.wikia.nocookie.net/yugioh/images/d/d2/TheEyeofTimaeus-OW.png/revision/latest?cb=20140113213349",
+    "type": "[DRAGON/EFFECT]",
+    "description": "Once per turn, the original ATK of this card can be doubled. When this effect is applied, the card is immediately destroyed at the end of the turn.",
+    "atk": 2000,
+    "def": 1000,
+    "level": null
+  },
+  {
+    "name": "The Fang of Critias",
+    "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3089280f-b4ba-40ae-a923-65daed68721a/d8xsktm-67e6dab1-470c-4645-861e-964194431d05.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi8zMDg5MjgwZi1iNGJhLTQwYWUtYTkyMy02NWRhZWQ2ODcyMWEvZDh4c2t0bS02N2U2ZGFiMS00NzBjLTQ2NDUtODYxZS05NjQxOTQ0MzFkMDUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.3sbRusY_cwGMccy6xJy5frfPGhzRPQhrHTYsZ4G14oA",
+    "artworkImage": "https://static.wikia.nocookie.net/yugioh/images/5/5e/TheFangofCritias-OW.png/revision/latest?cb=20131215215907",
+    "type": "[DRAGON/EFFECT]",
+    "description": "if this card has been face-up on the field for 3 turns, this card's ATK becomes 4000. If this card leaves the field, the turn count is reset",
+    "atk": 2000,
+    "def": 1000,
+    "level": null
+  }
+]

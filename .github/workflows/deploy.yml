@@ -1,0 +1,100 @@
+name: Check and deploy Almaza
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: almaza_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      STORAGE_BACKEND: postgres
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/almaza_test
+      DIRECT_URL: postgresql://postgres:postgres@localhost:5432/almaza_test
+      SESSION_SECRET: ephemeral-ci-session-secret-not-used-in-production
+      ADMIN_PASSWORD: ephemeral-ci-admin-password
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm cloud:migrate
+      - run: pnpm cloud:seed
+      - run: pnpm cloud:seed
+      - run: pnpm cloud:check
+      - run: pnpm build
+
+  deploy:
+    needs: check
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    concurrency:
+      group: almaza-production
+      cancel-in-progress: false
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      DIRECT_URL: ${{ secrets.DIRECT_URL }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+      STORAGE_BACKEND: postgres
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Check deployment settings
+        shell: bash
+        run: |
+          for key in VERCEL_ORG_ID VERCEL_PROJECT_ID VERCEL_TOKEN DATABASE_URL DIRECT_URL ADMIN_PASSWORD; do
+            if [ -z "${!key}" ]; then
+              echo "Missing GitHub secret: $key"
+              exit 1
+            fi
+          done
+      - run: pnpm install --frozen-lockfile
+      - run: npm install --global vercel@latest
+      - name: Pull Vercel production settings
+        run: vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
+      - name: Build production
+        run: vercel build --prod --token="$VERCEL_TOKEN"
+      - name: Apply committed migrations
+        run: pnpm cloud:migrate
+      - name: Add missing defaults
+        run: pnpm cloud:seed
+      - name: Publish production
+        run: vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"

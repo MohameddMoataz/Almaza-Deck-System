@@ -1,0 +1,523 @@
+[
+  {
+    "id": "joy-card-set",
+    "name": "Joy Set",
+    "description": "",
+    "cards": [
+      {
+        "name": "Airknight Parshath"
+      },
+      {
+        "name": "Baby Dragon"
+      },
+      {
+        "name": "Battle Warrior"
+      },
+      {
+        "name": "Block Attack"
+      },
+      {
+        "name": "Flame Manipulator"
+      },
+      {
+        "name": "Flame Swordsman"
+      },
+      {
+        "name": "Goblin Attack Force",
+        "quantity": 2
+      },
+      {
+        "name": "Graceful Dice"
+      },
+      {
+        "name": "Jinzo"
+      },
+      {
+        "name": "Kunai with Chain"
+      },
+      {
+        "name": "Legendary Sword"
+      },
+      {
+        "name": "Monster Reborn"
+      },
+      {
+        "name": "Polymerization",
+        "quantity": 3
+      },
+      {
+        "name": "Red-Eyes Black Dragon",
+        "quantity": 2
+      },
+      {
+        "name": "Salamandra"
+      },
+      {
+        "name": "Scapegoat",
+        "quantity": 2
+      },
+      {
+        "name": "Skull Dice"
+      },
+      {
+        "name": "Swordsman of Landstar"
+      },
+      {
+        "name": "Thousand Dragon"
+      },
+      {
+        "name": "Time Wizard",
+        "quantity": 2
+      },
+      {
+        "name": "Trap Hole"
+      },
+      {
+        "name": "Time Wizard of Tomorrow"
+      },
+      {
+        "name": "The Claw of Hermos"
+      },
+      {
+        "name": "Mirror Force"
+      },
+      {
+        "name": "Copycat"
+      },
+      {
+        "name": "Fiber Jar",
+        "quantity": 3
+      },
+      {
+        "name": "Red-Eyes Black Metal Dragon"
+      },
+      {
+        "name": "Alligator's Sword"
+      },
+      {
+        "name": "Alligator's Sword Dragon"
+      },
+      {
+        "name": "Axe Raider"
+      },
+      {
+        "name": "Change of Heart"
+      },
+      {
+        "name": "Trap Hole of Spikes"
+      },
+      {
+        "name": "Foolish Burial"
+      },
+      {
+        "name": "Gamble"
+      },
+      {
+        "name": "Black Skull Dragon"
+      },
+      {
+        "name": "Gearfried the Iron Knight",
+        "quantity": 2
+      },
+      {
+        "name": "Gearfried the Swordmaster"
+      },
+      {
+        "name": "Fairy Box"
+      },
+      {
+        "name": "Dark Hole"
+      },
+      {
+        "name": "Drop Off"
+      },
+      {
+        "name": "Giant Trunade"
+      },
+      {
+        "name": "Gilti-Gearfried the Magical Steel Knight"
+      },
+      {
+        "name": "Blue Flame Swordsman",
+        "quantity": 2
+      },
+      {
+        "name": "Card of Sanctity"
+      },
+      {
+        "name": "Gilford the Lightning"
+      },
+      {
+        "name": "Giltia the D. Knight - Soul Spear"
+      },
+      {
+        "name": "Pot of Greed"
+      },
+      {
+        "name": "Marauding Captain",
+        "quantity": 2
+      },
+      {
+        "name": "Magical Arm Shield"
+      },
+      {
+        "name": "Panther Warrior"
+      },
+      {
+        "name": "Stray Lambs"
+      },
+      {
+        "name": "Little-Winguard"
+      },
+      {
+        "name": "Metalmorph"
+      },
+      {
+        "name": "Question"
+      },
+      {
+        "name": "Sakuretsu Armor"
+      },
+      {
+        "name": "Roulette Spider"
+      },
+      {
+        "name": "Rocket Warrior"
+      },
+      {
+        "name": "Nutrient Z"
+      },
+      {
+        "name": "Release Restraint"
+      },
+      {
+        "name": "Rocket Hermos Cannon"
+      },
+      {
+        "name": "Red-Eyes Black Dragon Sword"
+      },
+      {
+        "name": "Shield & Sword"
+      },
+      {
+        "name": "Lightning Blade"
+      },
+      {
+        "name": "Sword Hunter"
+      },
+      {
+        "name": "Graverobber"
+      },
+      {
+        "name": "Hayabusa Knight"
+      },
+      {
+        "name": "The Fiend Megacyber"
+      },
+      {
+        "name": "Time Magic Hammer"
+      },
+      {
+        "name": "The Warrior Returning Alive"
+      }
+    ]
+  },
+  {
+    "id": "yumi-yugi-card-set",
+    "name": "Yugi",
+    "description": "",
+    "cards": [
+      {
+        "name": "Dark Magician"
+      },
+      {
+        "name": "Dark Magician Girl"
+      },
+      {
+        "name": "Magician of Black Chaos"
+      },
+      {
+        "name": "Buster Blader"
+      },
+      {
+        "name": "Summoned Skull"
+      },
+      {
+        "name": "Gaia The Fierce Knight"
+      },
+      {
+        "name": "Curse of Dragon"
+      },
+      {
+        "name": "Gaia The Dragon Champion"
+      },
+      {
+        "name": "Black Luster Soldier"
+      },
+      {
+        "name": "Black Luster Ritual"
+      },
+      {
+        "name": "Celtic Guardian"
+      },
+      {
+        "name": "Mystical Elf"
+      },
+      {
+        "name": "Giant Soldier of Stone"
+      },
+      {
+        "name": "Beaver Warrior"
+      },
+      {
+        "name": "Feral Imp"
+      },
+      {
+        "name": "Silver Fang"
+      },
+      {
+        "name": "Gazelle the King of Mythical Beasts"
+      },
+      {
+        "name": "Berfomet"
+      },
+      {
+        "name": "Chimera the Flying Mythical Beast"
+      },
+      {
+        "name": "King's Knight"
+      },
+      {
+        "name": "Jack's Knight"
+      },
+      {
+        "name": "Exodia the Forbidden One"
+      },
+      {
+        "name": "Right Arm of the Forbidden One"
+      },
+      {
+        "name": "Left Arm of the Forbidden One"
+      },
+      {
+        "name": "Right Leg of the Forbidden One"
+      },
+      {
+        "name": "Left Leg of the Forbidden One"
+      },
+      {
+        "name": "Swords of Revealing Light"
+      },
+      {
+        "name": "Monster Reborn"
+      },
+      {
+        "name": "Dark Hole"
+      },
+      {
+        "name": "Brain Control"
+      },
+      {
+        "name": "Mystical Space Typhoon"
+      },
+      {
+        "name": "Polymerization"
+      },
+      {
+        "name": "Card Destruction"
+      },
+      {
+        "name": "Magical Hats"
+      },
+      {
+        "name": "Mirror Force"
+      },
+      {
+        "name": "Magic Cylinder"
+      },
+      {
+        "name": "Spellbinding Circle"
+      },
+      {
+        "name": "De-Spell"
+      },
+      {
+        "name": "The Claw of Hermos"
+      },
+      {
+        "name": "Beta The Magnet Warrior"
+      },
+      {
+        "name": "The Eye of Timaeus"
+      },
+      {
+        "name": "Pot of Greed"
+      },
+      {
+        "name": "Slifer the Sky Dragon"
+      },
+      {
+        "name": "Obelisk the Tormentor"
+      },
+      {
+        "name": "The Winged Dragon of Ra"
+      },
+      {
+        "name": "The Fang of Critias"
+      },
+      {
+        "name": "Dark Magician Girl the Dragon Knight"
+      },
+      {
+        "name": "Dark Magician the Dragon Knight"
+      },
+      {
+        "name": "Dark Paladin"
+      },
+      {
+        "name": "Raigeki"
+      },
+      {
+        "name": "De-Fusion"
+      },
+      {
+        "name": "Catapult Turtle"
+      },
+      {
+        "name": "Amulet Dragon"
+      },
+      {
+        "name": "Arcana Knight Joker"
+      },
+      {
+        "name": "Kuriboh"
+      },
+      {
+        "name": "Magician of Faith"
+      },
+      {
+        "name": "Ancient Rules"
+      },
+      {
+        "name": "Black Luster Soldier - Envoy of the Beginning"
+      },
+      {
+        "name": "Celtic Guard of Noble Arms"
+      },
+      {
+        "name": "Dark Magician of Chaos"
+      },
+      {
+        "name": "Magician's Valkyria"
+      },
+      {
+        "name": "Graceful Charity"
+      },
+      {
+        "name": "Witch of the Black Forest"
+      },
+      {
+        "name": "Alpha The Magnet Warrior"
+      },
+      {
+        "name": "Big Shield Gardna"
+      },
+      {
+        "name": "Black Illusion"
+      },
+      {
+        "name": "Torrential Tribute"
+      },
+      {
+        "name": "Valkyrion the Magna Warrior"
+      },
+      {
+        "name": "Winged Dragon, Guardian of the Fortress #1"
+      },
+      {
+        "name": "Dark Renewal"
+      },
+      {
+        "name": "Black Magic Ritual"
+      },
+      {
+        "name": "Bond Between Teacher and Student"
+      },
+      {
+        "name": "Dark Magic Attack"
+      },
+      {
+        "name": "Dark Magic Curtain"
+      },
+      {
+        "name": "Dark Magic Veil"
+      },
+      {
+        "name": "Double Spell"
+      },
+      {
+        "name": "Exchange"
+      },
+      {
+        "name": "Gamma the Magnet Warrior"
+      },
+      {
+        "name": "Griffore"
+      },
+      {
+        "name": "Heavy Storm"
+      },
+      {
+        "name": "Horn Imp"
+      },
+      {
+        "name": "Horn of the Unicorn"
+      },
+      {
+        "name": "Knight's Title"
+      },
+      {
+        "name": "Koumori Dragon"
+      },
+      {
+        "name": "Legendary Knight Critias"
+      },
+      {
+        "name": "Legendary Knight Hermos"
+      },
+      {
+        "name": "Legendary Knight Timaeus"
+      },
+      {
+        "name": "Queen's Knight"
+      },
+      {
+        "name": "Magical Contract Door"
+      },
+      {
+        "name": "Spell Shattering Arrow"
+      },
+      {
+        "name": "Sorcerer of Dark Magic"
+      },
+      {
+        "name": "The Eye of Truth"
+      },
+      {
+        "name": "Sangan"
+      },
+      {
+        "name": "Shift"
+      },
+      {
+        "name": "Thousand Knives"
+      },
+      {
+        "name": "Snatch Steal"
+      },
+      {
+        "name": "Timaeus the United Dragon"
+      }
+    ]
+  }
+]

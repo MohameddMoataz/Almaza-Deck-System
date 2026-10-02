@@ -1,0 +1,13 @@
+.env
+.env.*
+sources/
+AGENTS.md
+artifacts/
+exports/
+backups/
+*.db
+*.db-*
+prisma/*.db
+prisma/*.db-*
+.next-dev/
+layout-*.png
