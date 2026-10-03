@@ -1,3 +1,6 @@
+import { arabicReviewedEffects } from "./arabicReviewedEffects";
+import { translateEffectTemplate } from "./arabicEffectTemplates";
+
 // Display text only. English card names remain the identifiers used by game rules and artwork.
 export const arabicCardText: Record<string, string> = {
   "Airknight Parshath": "فارس السماء بارشاث",
@@ -134,6 +137,11 @@ export const arabicCardText: Record<string, string> = {
   "Torrential Tribute": "تضحية السيل الجارف",
   "Tribute": "تضحية",
   "Tribute Summon": "استدعاء بالتضحية",
+  "Equip Spell": "سحر تجهيز",
+  "Equip Card": "بطاقة تجهيز",
+  "Second Coin Toss": "رمية العملة الثانية",
+  "Dice Jar": "جرة النرد",
+  "Snipe Hunter": "الصياد القناص",
   "You can Tribute 3 monsters to Tribute Summon (but not Set) this card. If Summoned this way: Destroy all monsters your opponent controls.": "يمكنك التضحية بـ3 وحوش لاستدعاء هذه البطاقة بالتضحية (ولكن ليس وضعها مقلوبة). إذا استُدعيت بهذه الطريقة: دمر جميع الوحوش التي يتحكم بها خصمك.",
   "Requires 3 Tributes to Normal Summon (cannot be Normal Set). This card's Normal Summon cannot be negated. When Normal Summoned, cards and effects cannot be activated. Neither player can target this card with card effects. Once per turn, during the End Phase, if this card was Special Summoned: Send it to the GY. You can Tribute 2 monsters; destroy all monsters your opponent controls. This card cannot declare an attack the turn this effect is activated.": "يتطلب الاستدعاء العادي لهذه البطاقة التضحية بـ3 وحوش (ولا يمكن وضعها مقلوبة بشكل عادي). لا يمكن إبطال استدعائها العادي. عند استدعائها بشكل عادي، لا يمكن تفعيل البطاقات أو التأثيرات. لا يمكن لأي لاعب استهداف هذه البطاقة بتأثيرات البطاقات. مرة واحدة في كل دور، خلال مرحلة النهاية، إذا استُدعيت هذه البطاقة استدعاءً خاصًا: أرسلها إلى المقبرة. يمكنك التضحية بوحشين؛ دمر جميع الوحوش التي يتحكم بها خصمك. لا يمكن لهذه البطاقة إعلان هجوم خلال الدور الذي يُفعَّل فيه هذا التأثير.",
   "Valkyrion the Magna Warrior": "فالكيريون المحارب المغناطيسي",
@@ -181,6 +189,17 @@ export const arabicCardText: Record<string, string> = {
   "FLIP: Each player shuffles all cards from their hand, field, and Graveyard into the Deck, then draws 5 cards.": "عند القلب: يعيد كل لاعب جميع البطاقات من يده وملعبه ومقبرته إلى مجموعته ويخلطها، ثم يسحب 5 بطاقات.",
   "This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale.": "هذا التنين الأسطوري قوة هائلة للتدمير. يكاد يكون لا يُقهر، وقليلون جدًا واجهوا هذا المخلوق المهيب ونجوا ليرووا قصتهم."
 };
+
+function effectKey(text: string) {
+  return text.replace(/\r\n?/g, "\n").replace(/[“”]/g, '"').replace(/[‘’]/g, "'").replace(/\s+/g, " ").trim();
+}
+
+const reviewed = new Map(Object.entries({ ...arabicCardText, ...arabicReviewedEffects })
+  .map(([source, translation]) => [effectKey(source), translation]));
+
+export function reviewedArabicText(source: string): string | undefined {
+  return reviewed.get(effectKey(source)) ?? translateEffectTemplate(source);
+}
 
 export function normalizeArabicCardTerms(source: string, translation: string) {
   if (!/\btributes?\b/i.test(source)) return translation;

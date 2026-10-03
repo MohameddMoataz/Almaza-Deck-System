@@ -145,6 +145,16 @@ textarea {
   padding: 0 10px;
 }
 
+.translation-original {
+  margin-block: 12px;
+  border-block: 1px solid var(--border, #54717c);
+  padding-block: 10px;
+  overflow-wrap: anywhere;
+}
+
+.translation-original summary { cursor: pointer; padding-block: 6px; }
+.translation-original p { white-space: pre-line; }
+
 .translation-status {
   display: flex;
   align-items: center;

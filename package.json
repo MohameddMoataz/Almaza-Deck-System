@@ -5,6 +5,7 @@
   "packageManager": "pnpm@11.19.0",
   "engines": { "node": "22.x" },
   "scripts": {
+    "test:translations": "tsx --test tests/arabic-translations.test.ts",
     "dev": "next dev",
     "build": "prisma generate && prisma generate --schema prisma/cloud/schema.prisma && next build",
     "postinstall": "prisma generate && prisma generate --schema prisma/cloud/schema.prisma",

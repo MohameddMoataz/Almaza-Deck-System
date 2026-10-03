@@ -997,6 +997,15 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
                   </div>
                 </div>
                 <p dir="auto">{translatedDetail!.description}</p>
+                {locale === "ar" ? (
+                  <details key={liveDetail.name + liveDetail.description} className="translation-original">
+                    <summary>{t(locale, "originalCardText")}</summary>
+                    <p className="tiny-meta" dir="rtl">
+                      {t(locale, liveDetail.descriptionAr ? "adminCardTranslation" : arabic.reviewed(liveDetail.description) ? "reviewedCardTranslation" : "automaticCardTranslation")}
+                    </p>
+                    <p lang="en" dir="ltr">{liveDetail.description}</p>
+                  </details>
+                ) : null}
                 {canEdit && !("cardApiId" in selectedCard!) ? (
                   <div className="selection-actions">
                     {deckSections.map((section) => (

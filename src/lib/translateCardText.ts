@@ -3,7 +3,8 @@ import { createHash } from "crypto";
 import { promises as fs } from "fs";
 import path from "path";
 import { z } from "zod";
-import { arabicCardText, normalizeArabicCardTerms } from "./arabicCardText";
+import { arabicCardText, normalizeArabicCardTerms, reviewedArabicText } from "./arabicCardText";
+import { ARABIC_TRANSLATION_VERSION, finishArabicTranslation, translationSource, translationChunks } from "./arabicTranslationRules";
 import { readPowerOfChaosOverrides } from "./powerOfChaosCards";
 import { cloudDatabase, usesCloudStorage } from "./cloudDb";
 import { readCloudDocument, writeCloudDocument } from "./cloudContent";
@@ -34,20 +35,9 @@ async function withSlot<T>(work: () => Promise<T>): Promise<T> {
   }
 }
 
-function translationSource(source: string) {
-  return source
-    .replace(/\bTribute Summon(ed|ing)?\b/gi, (_, suffix: string | undefined) => `Summon${suffix ?? ""} by sacrifice`)
-    .replace(/\bTributes\b/gi, "sacrifices")
-    .replace(/\bTribute\b/gi, "sacrifice");
-}
-
-function translationChunks(source: string, limit: number) {
-  return source.match(new RegExp(`[\\s\\S]{1,${limit}}(?:\\s|$)|[\\s\\S]{1,${limit}}`, "g")) ?? [];
-}
-
 async function translateWithMyMemory(source: string) {
   const translated: string[] = [];
-  for (const chunk of translationChunks(translationSource(source), 450)) {
+  for (const chunk of translationChunks(source, 450)) {
     const params = new URLSearchParams({ q: chunk, langpair: "en|ar" });
     const response = await fetch(`https://api.mymemory.translated.net/get?${params}`, {
       cache: "no-store",
@@ -57,7 +47,7 @@ async function translateWithMyMemory(source: string) {
     if (!response.ok) throw new Error("Fallback translation is temporarily unavailable.");
     const payload = memoryResponseSchema.parse(await response.json());
     const text = payload.responseData.translatedText.trim();
-    if (String(payload.responseStatus) !== "200" || payload.quotaFinished || !text || text === chunk) {
+    if (String(payload.responseStatus) !== "200" || payload.quotaFinished || !text) {
       throw new Error("Fallback translation returned no Arabic text.");
     }
     translated.push(text);
@@ -68,7 +58,7 @@ async function translateWithMyMemory(source: string) {
 async function translateWithGoogle(source: string) {
   // Keep long effects intact while staying within the provider's per-request limit.
   const translated: string[] = [];
-  for (const chunk of translationChunks(translationSource(source), 3000)) {
+  for (const chunk of translationChunks(source, 3000)) {
     const params = new URLSearchParams({ client: "gtx", sl: "en", tl: "ar", dt: "t", q: chunk });
     const response = await fetch(`https://translate.googleapis.com/translate_a/single?${params}`, {
       cache: "no-store",
@@ -84,22 +74,19 @@ async function translateWithGoogle(source: string) {
 }
 
 async function translateRemote(source: string) {
-  let translation: string;
+  const prepared = translationSource(source);
   try {
-    translation = await translateWithMyMemory(source);
+    return normalizeArabicCardTerms(source, finishArabicTranslation(source, await translateWithMyMemory(prepared)));
   } catch {
-    translation = await translateWithGoogle(source);
+    return normalizeArabicCardTerms(source, finishArabicTranslation(source, await translateWithGoogle(prepared)));
   }
-  return normalizeArabicCardTerms(source, translation
-    .replace(/ارسم/g, "اسحب")
-    .replace(/الفيوجن|الاندماج/g, "الدمج")
-    .replace(/سطح السفينة/g, "المجموعة"));
 }
 
 export async function translateCardText(source: string): Promise<string> {
-  if (!source || arabicCardText[source]) return arabicCardText[source] ?? source;
+  const reviewed = reviewedArabicText(source);
+  if (!source || reviewed) return reviewed ?? source;
   if (!/[a-z]/i.test(source)) return source;
-  const key = createHash("sha256").update(`v1:${source}`).digest("hex");
+  const key = createHash("sha256").update(`${ARABIC_TRANSLATION_VERSION}:${source}`).digest("hex");
   const existing = pending.get(key);
   if (existing) return existing;
   const task = (async () => {
@@ -139,7 +126,7 @@ export async function findArabicCardNames(query: string) {
   const names = new Set<string>();
   const addMatch = (source: string, translation: string) => {
     translation = normalizeArabicCardTerms(source, translation);
-    if (source.length <= 150 && !/[.\n;]/.test(source) && !/ (Monster|Card)$/.test(source)
+    if (source.length <= 150 && !/[.\n;]/.test(source) && !/ (Monster|Card|Spell)$/.test(source)
       && normalize(translation).includes(needle)) names.add(source);
   };
   Object.entries(arabicCardText).forEach(([source, translation]) => addMatch(source, translation));

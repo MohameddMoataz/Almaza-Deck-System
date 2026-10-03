@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { arabicCardText, normalizeArabicCardTerms } from "@/lib/arabicCardText";
+import { normalizeArabicCardTerms, reviewedArabicText } from "@/lib/arabicCardText";
 import type { Locale } from "@/lib/i18n";
 
 export function useArabicCardText(locale: Locale, texts: string[], requiredTexts: string[] = []) {
@@ -17,7 +17,7 @@ export function useArabicCardText(locale: Locale, texts: string[], requiredTexts
     if (locale !== "ar") return;
     const controller = new AbortController();
     const missing = (JSON.parse(serialized) as string[])
-      .filter((text) => !arabicCardText[text] && !known.current[text] && /[a-z]/i.test(text));
+      .filter((text) => !reviewedArabicText(text) && !known.current[text] && /[a-z]/i.test(text));
     setFailedTexts(new Set());
     setLoading(missing.length > 0);
     const timer = setTimeout(async () => {
@@ -50,7 +50,8 @@ export function useArabicCardText(locale: Locale, texts: string[], requiredTexts
   const required = JSON.parse(requiredSerialized) as string[];
 
   return {
-    text: (source: string) => locale === "ar" ? normalizeArabicCardTerms(source, arabicCardText[source] ?? translations[source] ?? source) : source,
+    text: (source: string) => locale === "ar" ? normalizeArabicCardTerms(source, reviewedArabicText(source) ?? translations[source] ?? source) : source,
+    reviewed: (source: string) => Boolean(reviewedArabicText(source)),
     loading: locale === "ar" && loading,
     failed: locale === "ar" && required.some((text) => failedTexts.has(text)),
     retry: () => setAttempt((value) => value + 1)
