@@ -7,7 +7,10 @@ import { localeCookieName, normalizeLocale } from "@/lib/i18n";
 import { readPowerOfChaosOverrides } from "@/lib/powerOfChaosCards";
 import { readSavedCardSets } from "@/lib/savedSets";
 
-export default async function UserDeckPage({ params }: { params: Promise<{ username: string }> }) {
+export default async function UserDeckPage({ params, searchParams }: {
+  params: Promise<{ username: string }>;
+  searchParams: Promise<{ tab?: string }>;
+}) {
   const { username } = await params;
   const deck = await getDeckByUsername(username.toLowerCase());
   if (!deck) notFound();
@@ -28,6 +31,7 @@ export default async function UserDeckPage({ params }: { params: Promise<{ usern
         initialSavedSets={savedSets}
         initialPowerOfChaosCards={powerOfChaosCards}
         locale={locale}
+        initialTab={(await searchParams).tab}
       />
     </main>
   );

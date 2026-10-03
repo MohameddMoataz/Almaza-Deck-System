@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useState, useTransition } from "react";
+import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { DeckCard } from "@prisma/client";
 import { artworkLookupUrl, artworkProxyUrl, isDirectArtworkUrl, croppedArtworkUrl } from "@/lib/cardArtwork";
 import { CardSummary } from "@/lib/cards";
 import { canCardGoInSection, isFusionCard, SectionKey, deckSections, groupBySection, totalCopies } from "@/lib/deck";
+import { MAIN_DECK_LIMIT, moveDestination } from "@/lib/deckRules";
 import { Locale, sectionLabel, t } from "@/lib/i18n";
 import type { PowerOfChaosCardOverride } from "@/lib/powerOfChaosCards";
 import type { SavedCardSet } from "@/lib/savedSetData";
@@ -22,6 +23,7 @@ type Props = {
   initialSavedSets: SavedCardSet[];
   initialPowerOfChaosCards: PowerOfChaosCardOverride[];
   locale: Locale;
+  initialTab?: string;
 };
 
 type Selection = {
@@ -147,7 +149,7 @@ function SmartCardPreview({ card, locale, translated }: {
   );
 }
 
-export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, initialPowerOfChaosCards, locale }: Props) {
+export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, initialPowerOfChaosCards, locale, initialTab }: Props) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<CardSummary[]>([]);
@@ -179,9 +181,50 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
   const [selectedCard, setSelectedCard] = useState<CardSummary | DeckCard | null>(null);
   const [selection, setSelection] = useState<Selection[]>([]);
   const [selectionMode, setSelectionMode] = useState(false);
-  const [activeTab, setActiveTab] = useState<SectionKey | "CARDS" | "DETAILS">("MAIN");
+  const [activeTab, setActiveTab] = useState<(typeof tabs)[number]>(
+    () => tabs.find((tab) => tab === initialTab) ?? "MAIN"
+  );
+  const previousTab = useRef<(typeof tabs)[number]>("MAIN");
+  const previousScroll = useRef(0);
+  const requestInFlight = useRef(false);
+  const [isUpdating, setIsUpdating] = useState(false);
   const [dragOver, setDragOver] = useState<SectionKey | null>(null);
   const [isPending, startTransition] = useTransition();
+  const busy = isUpdating || isPending || importingSetId !== null;
+
+  function navigateTo(tab: (typeof tabs)[number], refresh = false) {
+    setActiveTab(tab);
+    const url = new URL(window.location.href);
+    url.searchParams.set("tab", tab);
+    url.hash = "";
+    if (refresh) {
+      startTransition(() => {
+        if (url.href === window.location.href) router.refresh();
+        else router.replace(`${url.pathname}${url.search}`, { scroll: false });
+      });
+    } else {
+      window.history.replaceState(null, "", url);
+    }
+    requestAnimationFrame(() => {
+      const target = document.getElementById(`deck-${tab}`);
+      target?.scrollIntoView({ block: "start" });
+    });
+  }
+
+  function closeDetails() {
+    navigateTo(previousTab.current);
+    requestAnimationFrame(() => window.scrollTo({ top: previousScroll.current }));
+  }
+
+  useEffect(() => {
+    if (window.location.hash === "#import-sets") {
+      document.getElementById("import-sets")?.scrollIntoView({ block: "start" });
+    }
+  }, []);
+
+  useEffect(() => {
+    document.querySelector('.mobile-tabs button[aria-current="page"]')?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }, [activeTab]);
 
   const grouped = useMemo(() => groupBySection(cards), [cards]);
   const selectedCount = selection.length;
@@ -231,51 +274,85 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
     };
   }, [query]);
 
-  async function search(event: React.FormEvent<HTMLFormElement>) {
+  function search(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    await runSearch(query);
   }
 
-  async function deckRequest(body: unknown) {
+  async function deckRequest(body: unknown, destination?: SectionKey) {
+    if (requestInFlight.current || busy) return false;
+    requestInFlight.current = true;
+    setIsUpdating(true);
     setMessage("");
-    const response = await fetch("/api/deck", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body)
-    });
-    const payload = (await response.json()) as { error?: string };
-    if (!response.ok) {
-      setMessage(payload.error ?? t(locale, "deckUpdateFailed"));
-      return;
-    }
+    setImportMessage("");
+    try {
+      const response = await fetch("/api/deck", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      });
+      const payload = (await response.json()) as {
+        error?: string; moved?: number; main?: number; fusion?: number; capacitySkipped?: number; copiesSkipped?: number;
+      };
+      if (!response.ok) {
+        const errors: Record<string, string> = {
+          "Main Deck cannot contain more than 60 cards.": t(locale, "mainDeckFull"),
+          "Maximum 3 copies of this card allowed in deck sections.": t(locale, "copyLimit")
+        };
+        setMessage(errors[payload.error ?? ""] ?? payload.error ?? t(locale, "deckUpdateFailed"));
+        return false;
+      }
 
-    setSelection([]);
-    setSelectionMode(false);
-    startTransition(() => router.refresh());
+      const feedback = payload.moved !== undefined
+        ? [t(locale, "moveResult", { count: payload.moved }),
+            payload.main ? t(locale, "mainMoved", { count: payload.main }) : "",
+            payload.fusion ? t(locale, "fusionMoved", { count: payload.fusion }) : "",
+            payload.capacitySkipped ? t(locale, "capacitySkipped", { count: payload.capacitySkipped }) : "",
+            payload.copiesSkipped ? t(locale, "copiesSkipped", { count: payload.copiesSkipped }) : ""].filter(Boolean).join(" ")
+        : t(locale, "deckUpdated");
+      setImportMessage(feedback);
+      if (payload.moved !== 0) cancelSelection();
+      if (destination && payload.moved) navigateTo(destination === "MAIN" && !payload.main && payload.fusion ? "EXTRA" : destination, true);
+      else startTransition(() => router.refresh());
+      return payload.moved === undefined || payload.moved > 0;
+    } catch {
+      setMessage(t(locale, "deckUpdateFailed"));
+      return false;
+    } finally {
+      requestInFlight.current = false;
+      setIsUpdating(false);
+    }
   }
 
   async function importSavedSet(setId: string) {
+    if (requestInFlight.current || busy) return;
+    requestInFlight.current = true;
     setMessage("");
     setImportMessage("");
     setImportingSetId(setId);
 
-    const response = await fetch("/api/deck", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action: "importSet", ownerId: owner.id, setId })
-    });
-    const payload = (await response.json()) as { imported?: number; missing?: string[]; error?: string };
+    try {
+      const response = await fetch("/api/deck", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "importSet", ownerId: owner.id, setId })
+      });
+      const payload = (await response.json()) as { imported?: number; missing?: string[]; error?: string };
 
-    setImportingSetId(null);
+      if (!response.ok) {
+        setMessage(payload.error ?? t(locale, "importFailed"));
+        return;
+      }
 
-    if (!response.ok) {
-      setMessage(payload.error ?? t(locale, "importFailed"));
-      return;
+      const missing = payload.missing?.length ? t(locale, "missingMessage", { cards: payload.missing.join(", ") }) : "";
+      setImportMessage(t(locale, "importedMessage", { count: payload.imported ?? 0, missing }));
+      cancelSelection();
+      navigateTo("EXTRA_CARDS", true);
+    } catch {
+      setMessage(t(locale, "importFailed"));
+    } finally {
+      requestInFlight.current = false;
+      setImportingSetId(null);
     }
-
-    const missing = payload.missing?.length ? t(locale, "missingMessage", { cards: payload.missing.join(", ") }) : "";
-    setImportMessage(t(locale, "importedMessage", { count: payload.imported ?? 0, missing }));
-    startTransition(() => router.refresh());
   }
 
   function startEditingSet(set: SavedCardSet) {
@@ -415,7 +492,7 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
       ownerId: owner.id,
       targetSection,
       selections: selectionPayload()
-    });
+    }, targetSection);
   }
 
   function removeSelection() {
@@ -432,7 +509,7 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
       ownerId: owner.id,
       targetSection,
       selections: [{ entryId: entry.id, count: 1 }]
-    }).then(() => setSelectedCard(null));
+    }, targetSection).then((ok) => { if (ok) setSelectedCard(null); });
   }
 
   function removeSelectedDeckCard(entry: DeckCard) {
@@ -440,14 +517,17 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
       action: "remove",
       ownerId: owner.id,
       selections: [{ entryId: entry.id, count: 1 }]
-    }).then(() => setSelectedCard(null));
+    }).then((ok) => { if (ok) { setSelectedCard(null); closeDetails(); } });
   }
 
   function openDetails(card: CardSummary | DeckCard) {
     setSelectedCard(card);
-    if (window.matchMedia("(max-width: 760px)").matches) {
-      setActiveTab("DETAILS");
+    if (activeTab !== "DETAILS") {
+      previousTab.current = activeTab;
+      previousScroll.current = window.scrollY;
     }
+    if (window.matchMedia("(max-width: 760px)").matches) navigateTo("DETAILS");
+    else document.getElementById("deck-DETAILS")?.scrollIntoView({ block: "nearest" });
   }
 
   function toggleCard(entry: DeckCard, copy: number, range: boolean) {
@@ -481,6 +561,8 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
   }
 
   function selectAll(section: SectionKey) {
+    setImportMessage("");
+    navigateTo(section);
     setSelectionMode(true);
     setSelection(
       grouped[section].flatMap((card) =>
@@ -494,6 +576,8 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
   }
 
   function startSelection(section?: SectionKey) {
+    setImportMessage("");
+    if (section) navigateTo(section);
     setSelectionMode(true);
     setSelection((current) => current.filter((item) => !section || item.section === section));
   }
@@ -691,19 +775,61 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
     <>
       <div className="mobile-tabs">
         {tabs.map((tab) => (
-          <button key={tab} className={activeTab === tab ? "active" : ""} onClick={() => setActiveTab(tab)}>
+          <button key={tab} aria-current={activeTab === tab ? "page" : undefined} className={activeTab === tab ? "active" : ""} onClick={() => navigateTo(tab)}>
             {tab === "CARDS" ? t(locale, "cards") : tab === "DETAILS" ? t(locale, "details") : sectionLabel(locale, tab)}
           </button>
         ))}
       </div>
+      {message ? <div className="error deck-feedback" role="alert">{message}</div> : null}
+      {importMessage ? <div className="success-message deck-feedback" role="status">
+        <span>{importMessage}</span>
+        <button type="button" aria-label={t(locale, "dismiss")} title={t(locale, "dismiss")} onClick={() => setImportMessage("")}>×</button>
+      </div> : null}
 
       <div className="deck-grid">
-        <aside className={`panel library-panel ${activeTab !== "CARDS" ? "mobile-hidden" : ""}`}>
+        <aside id="deck-CARDS" className={`panel library-panel ${activeTab !== "CARDS" ? "mobile-hidden" : ""}`}>
           <div className="panel-header">
             <h2 className="panel-title">{t(locale, "cardDatabase")}</h2>
           </div>
           <div className="panel-body">
-            <div className="saved-set-list">
+            <form className="form-stack card-search" role="search" onSubmit={search}>
+              <input type="search" aria-label={t(locale, "search")} value={query} onChange={(event) => {
+                setQuery(event.target.value);
+                setIsSearching(event.target.value.trim().length >= 2);
+                setResults([]);
+              }} placeholder={t(locale, "searchPlaceholder")} />
+              <button type="submit" disabled={isSearching}>{isSearching ? t(locale, "searching") : t(locale, "search")}</button>
+            </form>
+            <div className="search-results" aria-busy={isSearching}>
+              {!isSearching && query.trim().length >= 2 && !results.length ? <p className="tiny-meta" role="status">{t(locale, "noSearchResults")}</p> : null}
+              {results.map((card) => (
+                <div className="result-card" key={card.id}>
+                  <button
+                    className="result-row"
+                    draggable={canEdit}
+                    onClick={() => openDetails(card)}
+                    onDragStart={(event) => {
+                      event.dataTransfer.setData("application/json", JSON.stringify({ kind: "search-card", card }));
+                      event.dataTransfer.effectAllowed = "copy";
+                    }}
+                    type="button"
+                  >
+                    <img src={card.image} alt="" />
+                    <span>
+                      <strong dir="auto">{cardName(card.name)}</strong>
+                      <span className="tiny-meta">{arabic.text(card.type)}</span>
+                    </span>
+                  </button>
+                  {isAdmin && editingSetId ? (
+                    <button className="compact-button" onClick={() => addCardToSetDraft(card)} type="button">
+                      {t(locale, "addToSet")}
+                    </button>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+            <div className="saved-set-list" id="import-sets">
+              <h2 className="panel-title">{t(locale, "savedSets")}</h2>
               {savedSets.map((set) => {
                 const cardCount = set.cards.reduce((sum, card) => sum + (card.quantity ?? 1), 0);
                 const isEditing = editingSetId === set.id;
@@ -781,7 +907,7 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
                         </div>
                         <div className="selection-actions saved-set-actions">
                           {canEdit ? (
-                            <button disabled={importingSetId === set.id} onClick={() => importSavedSet(set.id)} type="button">
+                            <button disabled={busy} onClick={() => importSavedSet(set.id)} type="button">
                               {importingSetId === set.id ? t(locale, "importing") : t(locale, "importSet")}
                             </button>
                           ) : null}
@@ -807,46 +933,11 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
                   </section>
                 );
               })}
-              {importMessage ? <div className="success-message">{importMessage}</div> : null}
-            </div>
-            <form className="form-stack" onSubmit={search}>
-              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t(locale, "searchPlaceholder")} />
-              <button type="submit" disabled={isSearching}>{isSearching ? t(locale, "searching") : t(locale, "search")}</button>
-            </form>
-            <div className="search-results">
-              {results.map((card) => (
-                <div className="result-card" key={card.id}>
-                  <button
-                    className="result-row"
-                    draggable={canEdit}
-                    onClick={() => {
-                      setSelectedCard(card);
-                      setActiveTab("DETAILS");
-                    }}
-                    onDragStart={(event) => {
-                      event.dataTransfer.setData("application/json", JSON.stringify({ kind: "search-card", card }));
-                      event.dataTransfer.effectAllowed = "copy";
-                    }}
-                    type="button"
-                  >
-                    <img src={card.image} alt="" />
-                    <span>
-                      <strong dir="auto">{cardName(card.name)}</strong>
-                      <span className="tiny-meta">{arabic.text(card.type)}</span>
-                    </span>
-                  </button>
-                  {isAdmin && editingSetId ? (
-                    <button className="compact-button" onClick={() => addCardToSetDraft(card)} type="button">
-                      {t(locale, "addToSet")}
-                    </button>
-                  ) : null}
-                </div>
-              ))}
             </div>
           </div>
         </aside>
 
-        <main>
+        <main className={`${activeTab === "CARDS" || activeTab === "DETAILS" ? "mobile-hidden" : ""} ${selectionMode && canEdit ? "selecting-deck" : ""}`}>
           <section className="panel">
             <div className="panel-header">
               <h1 className="panel-title">{t(locale, "ownerDeck", { username: owner.username })}</h1>
@@ -854,6 +945,7 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
                 <span className="tiny-meta">{t(locale, "totalCards", { count: totalCopies(cards) })}</span>
                 {canEdit ? (
                   <button
+                    disabled={busy}
                     className={selectionMode ? "active" : ""}
                     onClick={() => (selectionMode ? cancelSelection() : startSelection())}
                     type="button"
@@ -869,10 +961,10 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
                 <span className="tiny-meta">{t(locale, "selectionHelp")}</span>
               </div>
             ) : null}
-            {message ? <div className="error">{message}</div> : null}
             <div className="deck-sections">
               {deckSections.map((section) => (
                 <section
+                  id={`deck-${section}`}
                   className={`section-drop ${dragOver === section ? "drag-over" : ""} ${activeTab !== section ? "mobile-hidden" : ""}`}
                   key={section}
                   onDragOver={(event) => {
@@ -885,18 +977,26 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
                 >
                   <div className="section-header">
                     <h2 className="section-title">{sectionLabel(locale, section)}</h2>
-                    <span className="tiny-meta">{totalCopies(grouped[section])} {t(locale, "cards")}</span>
+                    <span className={`tiny-meta ${section === "MAIN" && totalCopies(grouped[section]) >= MAIN_DECK_LIMIT ? "deck-full" : ""}`}>
+                      <bdi dir="ltr">{totalCopies(grouped[section])}{section === "MAIN" ? ` / ${MAIN_DECK_LIMIT}` : ""}</bdi> {t(locale, "cards")}
+                    </span>
                     {canEdit ? (
                       <div className="section-controls">
-                        <button onClick={() => startSelection(section)} type="button">
+                        <button disabled={busy || !grouped[section].length} onClick={() => startSelection(section)} type="button">
                           {t(locale, "select")}
                         </button>
-                        <button disabled={!selectionMode} onClick={() => selectAll(section)} type="button">
+                        <button disabled={busy || !grouped[section].length} onClick={() => selectAll(section)} type="button">
                           {t(locale, "selectAll")}
                         </button>
                       </div>
                     ) : null}
                   </div>
+                  {!grouped[section].length ? (
+                    <div className="empty-section">
+                      <p className="tiny-meta">{t(locale, "emptySection")}</p>
+                      {canEdit ? <button type="button" onClick={() => navigateTo("CARDS")}>{t(locale, "addCards")}</button> : null}
+                    </div>
+                  ) : null}
                   <div className="card-grid">
                     {grouped[section].flatMap((entry) =>
                       Array.from({ length: entry.quantity }, (_, index) => {
@@ -905,6 +1005,8 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
                         return (
                           <button
                             className={`card-tile ${selected ? "selected" : ""}`}
+                            aria-pressed={selectionMode ? selected : undefined}
+                            disabled={busy}
                             draggable={canEdit}
                             key={`${entry.id}-${copy}`}
                             onClick={(event) => {
@@ -922,7 +1024,7 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
                             type="button"
                           >
                             <img src={deckCardImage(entry)} alt="" />
-                            {selectionMode ? <span className="select-mark">{selected ? t(locale, "selected") : t(locale, "select")}</span> : null}
+                            {selectionMode ? <span className="select-mark" aria-hidden="true">{selected ? "✓" : ""}</span> : null}
                             {entry.quantity > 1 ? <span className="copy-chip">{copy}</span> : null}
                             <span className="card-name" dir="auto">{cardName(entry.cardName)}</span>
                           </button>
@@ -943,10 +1045,11 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
                 <div className="selection-actions">
                   {deckSections.map((section) => (
                     (() => {
-                      const invalidCard = selectedDeckCards.find((card) => !canCardGoInSection(card.cardType, section));
+                      const invalidCard = selectedDeckCards.find((card) => !canCardGoInSection(card.cardType, moveDestination(card.cardType, section)));
+                      const alreadyThere = selectedDeckCards.every((card) => card.section === moveDestination(card.cardType, section));
                       return (
                         <button
-                          disabled={isPending || selectedCount === 0 || Boolean(invalidCard)}
+                          disabled={busy || selectedCount === 0 || Boolean(invalidCard) || alreadyThere}
                           key={section}
                           onClick={() => moveSelection(section)}
                           title={invalidCard ? placementTitle(invalidCard.cardType, section) : undefined}
@@ -956,17 +1059,18 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
                       );
                     })()
                   ))}
-                  <button className="danger-button" disabled={isPending || selectedCount === 0} onClick={removeSelection}>{t(locale, "remove")}</button>
-                  <button disabled={selectedCount === 0} onClick={() => setSelection([])}>{t(locale, "clear")}</button>
-                  <button onClick={cancelSelection}>{t(locale, "exitSelect")}</button>
+                  <button className="danger-button" disabled={busy || selectedCount === 0} onClick={removeSelection}>{t(locale, "remove")}</button>
+                  <button disabled={busy || selectedCount === 0} onClick={() => setSelection([])}>{t(locale, "clear")}</button>
+                  <button disabled={busy} onClick={cancelSelection}>{t(locale, "exitSelect")}</button>
                 </div>
               </div>
             ) : null}
           </section>
         </main>
 
-        <aside className={`panel details-panel ${activeTab !== "DETAILS" ? "mobile-hidden" : ""}`}>
+        <aside id="deck-DETAILS" className={`panel details-panel ${activeTab !== "DETAILS" ? "mobile-hidden" : ""}`}>
           <div className="panel-header">
+            <button className="details-back" type="button" onClick={closeDetails}>{t(locale, "backToCards")}</button>
             <h2 className="panel-title">{t(locale, "cardDetails")}</h2>
             {arabic.loading ? <p className="tiny-meta" role="status">{t(locale, "translatingCards")}</p> : null}
             {arabic.failed ? (
@@ -1010,7 +1114,7 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
                   <div className="selection-actions">
                     {deckSections.map((section) => (
                       <button
-                        disabled={!canCardGoInSection((selectedCard as CardSummary).type, section)}
+                        disabled={busy || !canCardGoInSection((selectedCard as CardSummary).type, section)}
                         key={section}
                         onClick={() => addCard(selectedCard as CardSummary, section)}
                         title={placementTitle((selectedCard as CardSummary).type, section)}
@@ -1146,11 +1250,11 @@ export function DeckManager({ owner, cards, canEdit, isAdmin, initialSavedSets, 
                     </span>
                     <div className="selection-actions">
                       {detailMoveTargets.map((section) => (
-                        <button disabled={isPending} key={section} onClick={() => moveSelectedDeckCard(selectedDeckEntry, section)}>
+                        <button disabled={busy} key={section} onClick={() => moveSelectedDeckCard(selectedDeckEntry, section)}>
                           {t(locale, "moveTo", { section: sectionLabel(locale, section) })}
                         </button>
                       ))}
-                      <button className="danger-button" disabled={isPending} onClick={() => removeSelectedDeckCard(selectedDeckEntry)}>
+                      <button className="danger-button" disabled={busy} onClick={() => removeSelectedDeckCard(selectedDeckEntry)}>
                         {t(locale, "removeFromDeck")}
                       </button>
                     </div>

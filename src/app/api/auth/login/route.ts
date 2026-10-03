@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.redirect(new URL("/login?error=Invalid%20username%20or%20password.", request.url), 303);
   }
 
-  const response = NextResponse.redirect(new URL(`/users/${user.username}`, request.url), 303);
+  const response = NextResponse.redirect(new URL(`/users/${user.username}?tab=MAIN`, request.url), 303);
   response.cookies.set(
     SESSION_COOKIE_NAME,
     createSessionToken({ userId: user.id, username: user.username, role: user.role as "USER" | "ADMIN" }),

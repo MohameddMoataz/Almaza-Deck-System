@@ -566,17 +566,16 @@ textarea {
   position: absolute;
   left: 7px;
   top: 7px;
-  max-width: calc(100% - 14px);
-  min-height: 24px;
+  width: 26px;
+  height: 26px;
   display: grid;
   place-items: center;
   border: 1px solid rgba(101, 167, 255, 0.75);
-  border-radius: 999px;
+  border-radius: 4px;
   background: rgba(8, 13, 22, 0.92);
   color: var(--text);
-  font-size: 10px;
-  padding: 0 7px;
-  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .card-tile.selected .select-mark {
@@ -935,6 +934,20 @@ html[lang="ar"] .smart-card-name {
   display: none;
 }
 
+.deck-grid > *, .panel-title { min-width: 0; overflow-wrap: anywhere; }
+.deck-feedback { margin-bottom: 12px; }
+.success-message.deck-feedback { display: flex; align-items: flex-start; gap: 8px; }
+.deck-feedback > span { flex: 1; }
+.deck-feedback > button { width: 36px; min-height: 36px; flex-shrink: 0; padding: 0; font-size: 22px; }
+.deck-grid > main > .panel { overflow: visible; }
+.deck-full { color: var(--gold-soft); font-weight: 700; }
+.empty-section { padding: 16px; text-align: center; }
+.details-back { display: none; }
+.card-search { grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+.saved-set-list { margin-top: 18px; }
+[id^="deck-"], #import-sets { scroll-margin-top: 90px; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
 @media (max-width: 1120px) {
   .deck-grid {
     grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
@@ -949,7 +962,20 @@ html[lang="ar"] .smart-card-name {
 @media (max-width: 760px) {
   .topbar {
     align-items: flex-start;
+    position: static;
+    flex-direction: column;
+    gap: 10px;
   }
+
+  .brand strong { font-size: 18px; }
+  .nav-actions { justify-content: flex-start; width: 100%; gap: 6px; }
+  .nav-button { padding: 0 8px; }
+  .page { padding: 12px; }
+  button, .nav-button, .language-switcher select { min-height: 44px; }
+  input, textarea, select { font-size: 16px; }
+  .details-back { display: block; align-self: flex-start; }
+  [id^="deck-"], #import-sets { scroll-margin-top: 76px; }
+  .deck-feedback { position: sticky; top: 64px; z-index: 15; max-height: 25dvh; overflow: auto; }
 
   .home-grid,
   .deck-grid {
@@ -963,7 +989,7 @@ html[lang="ar"] .smart-card-name {
 
   .mobile-tabs {
     position: sticky;
-    top: 69px;
+    top: 0;
     z-index: 14;
     display: flex;
     gap: 6px;
@@ -974,6 +1000,7 @@ html[lang="ar"] .smart-card-name {
 
   .mobile-tabs button {
     min-width: max-content;
+    flex-shrink: 0;
   }
 
   .mobile-hidden {
@@ -981,7 +1008,9 @@ html[lang="ar"] .smart-card-name {
   }
 
   .card-grid {
-    grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+    gap: 8px;
+    padding: 10px;
   }
 
   .panel-header,
@@ -1009,7 +1038,22 @@ html[lang="ar"] .smart-card-name {
   }
 
   .selection-bar {
+    position: fixed;
+    inset-inline: 12px;
+    z-index: 25;
     bottom: 0;
     border-radius: 8px 8px 0 0;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    max-height: 42dvh;
+    overflow-y: auto;
   }
+
+  .selecting-deck { padding-bottom: min(42dvh, 300px); }
+
+  .selection-bar .selection-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .selection-bar .selection-actions button { padding: 6px 8px; font-size: 13px; overflow-wrap: anywhere; }
+  .selection-summary .tiny-meta { display: none; }
+  .section-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+  .section-controls { grid-column: 1 / -1; }
+  .section-controls button { flex: 1 1 0; }
 }

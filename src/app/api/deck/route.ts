@@ -78,7 +78,8 @@ export async function POST(request: NextRequest) {
     }
 
     if (parsed.data.action === "move") {
-      await moveCardCopies(owner.id, parsed.data.targetSection, parsed.data.selections);
+      const result = await moveCardCopies(owner.id, parsed.data.targetSection, parsed.data.selections);
+      return NextResponse.json({ ok: true, ...result });
     }
 
     if (parsed.data.action === "remove") {

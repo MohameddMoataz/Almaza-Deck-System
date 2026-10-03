@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.redirect(new URL("/signup?error=Could%20not%20create%20account.", request.url), 303);
   }
 
-  const response = NextResponse.redirect(new URL(`/users/${user.username}`, request.url), 303);
+  const response = NextResponse.redirect(new URL(`/users/${user.username}?tab=CARDS#import-sets`, request.url), 303);
   response.cookies.set(
     SESSION_COOKIE_NAME,
     createSessionToken({ userId: user.id, username: user.username, role: user.role as "USER" | "ADMIN" }),
