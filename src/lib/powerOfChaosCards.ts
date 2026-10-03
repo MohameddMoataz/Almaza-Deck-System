@@ -18,7 +18,11 @@ const overrideSchema = z.object({
   description: z.string().optional(),
   atk: z.number().int().nullable().optional(),
   def: z.number().int().nullable().optional(),
-  level: z.number().int().nullable().optional()
+  level: z.number().int().nullable().optional(),
+  gameSource: z.string().optional(),
+  gameIndex: z.number().int().optional(),
+  gameInternalId: z.number().int().optional(),
+  gameImageFile: z.string().optional()
 });
 
 const overridesSchema = z.array(overrideSchema);
@@ -58,6 +62,7 @@ export async function updatePowerOfChaosOverride(nextOverride: PowerOfChaosCardO
 
   const overrides = await readPowerOfChaosOverrides();
   const nextKey = keyFor(name);
+  const existing = overrides.find((override) => keyFor(override.name) === nextKey);
   const cleaned: PowerOfChaosCardOverride = {
     name,
     ...(nextOverride.nameAr?.trim() ? { nameAr: nextOverride.nameAr.trim() } : {}),
@@ -68,7 +73,23 @@ export async function updatePowerOfChaosOverride(nextOverride: PowerOfChaosCardO
     ...(nextOverride.description?.trim() ? { description: nextOverride.description.trim() } : {}),
     ...(nextOverride.atk !== undefined ? { atk: nextOverride.atk } : {}),
     ...(nextOverride.def !== undefined ? { def: nextOverride.def } : {}),
-    ...(nextOverride.level !== undefined ? { level: nextOverride.level } : {})
+    ...(nextOverride.level !== undefined ? { level: nextOverride.level } : {}),
+    ...((nextOverride.gameSource ?? existing?.gameSource)?.trim()
+      ? { gameSource: (nextOverride.gameSource ?? existing?.gameSource)?.trim() }
+      : {}),
+    ...(nextOverride.gameIndex !== undefined
+      ? { gameIndex: nextOverride.gameIndex }
+      : existing?.gameIndex !== undefined
+        ? { gameIndex: existing.gameIndex }
+        : {}),
+    ...(nextOverride.gameInternalId !== undefined
+      ? { gameInternalId: nextOverride.gameInternalId }
+      : existing?.gameInternalId !== undefined
+        ? { gameInternalId: existing.gameInternalId }
+        : {}),
+    ...((nextOverride.gameImageFile ?? existing?.gameImageFile)?.trim()
+      ? { gameImageFile: (nextOverride.gameImageFile ?? existing?.gameImageFile)?.trim() }
+      : {})
   };
 
   if (usesCloudStorage) {

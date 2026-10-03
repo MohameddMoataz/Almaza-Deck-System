@@ -15,7 +15,11 @@ const overrideSchema = z.object({
   description: z.string().optional(),
   atk: z.number().int().nullable().optional(),
   def: z.number().int().nullable().optional(),
-  level: z.number().int().nullable().optional()
+  level: z.number().int().nullable().optional(),
+  gameSource: z.string().optional(),
+  gameIndex: z.number().int().optional(),
+  gameInternalId: z.number().int().optional(),
+  gameImageFile: z.string().optional()
 });
 
 export async function GET() {

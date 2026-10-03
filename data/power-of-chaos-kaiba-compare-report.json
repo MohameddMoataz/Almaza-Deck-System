@@ -1,0 +1,1897 @@
+{
+  "generatedAt": "2026-10-03T21:32:27",
+  "gameAvailableRows": 474,
+  "uniqueGameCards": 471,
+  "existingOverrides": 14,
+  "addedFromGame": 467,
+  "changedToGameText": 3,
+  "unchangedGameText": 1,
+  "reportNote": "For matching cards, the local game text now overrides the app/YGOPRODeck text.",
+  "changed": [
+    {
+      "name": "Block Attack",
+      "before": "Target 1 face-up Attack Position monster your opponent controls; change that target to face-up Defense Position.",
+      "after": "Select 1 of your opponent's monsters and shift it to Defense Position."
+    },
+    {
+      "name": "Metalmorph",
+      "before": "Target 1 face-up monster on the field; equip this card to that target. It gains 300 ATK/DEF. If it attacks, it gains ATK equal to half the ATK of the attack target, during damage calculation only.",
+      "after": "After activation, this card is used to equip a face-up monster. The monster equipped with this card increases its ATK and DEF by 300 points. When attacking with a monster equipped with this card, you can further increase its ATK by an amount equal to half the ATK of your target."
+    },
+    {
+      "name": "Red-Eyes Black Metal Dragon",
+      "before": "Cannot be Normal Summoned/Set. Must first be Special Summoned (from your Deck) by Tributing \"Red-Eyes B. Dragon\" equipped with \"Metalmorph\".",
+      "after": "This card can only be Special Summoned from the Deck to the field by offering \"Red-Eyes B. Dragon\" equipped with \"Metalmorph\" as a Tribute. Your Deck is then shuffled."
+    }
+  ],
+  "added": [
+    {
+      "name": "Armored Starfish",
+      "description": "A bluish starfish with a solid hide capable of fending off attacks."
+    },
+    {
+      "name": "Armored Lizard",
+      "description": "A lizard with a very tough hide and a vicious bite."
+    },
+    {
+      "name": "Armaill",
+      "description": "A strange warrior who manipulates three deadly blades with both hands and his tail."
+    },
+    {
+      "name": "The Little Swordsman of Aile",
+      "description": "Offer 1 monster on your side of the field as a Tribute to increase this monster's ATK by 700 points until the end of the turn."
+    },
+    {
+      "name": "Aqua Madoor",
+      "description": "A wizard of the waters that conjures a liquid wall to crush any enemies that oppose him."
+    },
+    {
+      "name": "Malevolent Nuzzler",
+      "description": "A monster equipped with this card increases its ATK by 700 points. When this card is sent from the field to the Graveyard, you can pay 500 Life Points to place it on top of your Deck."
+    },
+    {
+      "name": "Tainted Wisdom",
+      "description": "When this card is changed from Attack Position to Defense Position, shuffle your own Deck."
+    },
+    {
+      "name": "Hiro's Shadow Scout",
+      "description": "FLIP: Your opponent draws 3 cards. Both players check the cards and any Spell Cards among them must be immediately discarded to the Graveyard."
+    },
+    {
+      "name": "Exile of the Wicked",
+      "description": "Destroys all face-up Fiend-Type monsters on the field."
+    },
+    {
+      "name": "Ansatsu",
+      "description": "A silent and deadly warrior specializing in assassinations."
+    },
+    {
+      "name": "The Shallow Grave",
+      "description": "Each player takes 1 Monster Card from his/her respective Graveyard and Special Summons them on the field in face-down Defense Position."
+    },
+    {
+      "name": "Reverse Trap",
+      "description": "All increases and decreases to ATK and DEF are reversed for the turn in which this card is activated."
+    },
+    {
+      "name": "Ameba",
+      "description": "When this card is face-up on the field and control shifts to your opponent, inflict 2000 points of Direct Damage to your opponent's Life Points. This effect can only be used once as long as this card remains face-up on the field."
+    },
+    {
+      "name": "Darkfire Dragon",
+      "description": "\"Firegrass\" + \"Petit Dragon\""
+    },
+    {
+      "name": "Gaia The Fierce Knight",
+      "description": "A knight whose horse travels faster than the wind. His battle-charge is a force to be reckoned with."
+    },
+    {
+      "name": "Blackland Fire Dragon",
+      "description": "A dragon that dwells in the depths of darkness, its vulnerability lies in its poor eyesight."
+    },
+    {
+      "name": "Invitation to a Dark Sleep",
+      "description": "When this monster is summoned (excluding Special Summon), select 1 of your opponent's monsters. As long as this card remains face-up on the field, the selected monster cannot attack."
+    },
+    {
+      "name": "The Furious Sea King",
+      "description": "Grand King of the Seven Seas, he's able to summon massive tidal waves to drown the enemy."
+    },
+    {
+      "name": "Drooling Lizard",
+      "description": "A blood-sucking snake in human form that attacks any living being that passes nearby."
+    },
+    {
+      "name": "Windstorm of Etaqua",
+      "description": "Change the battle positions of all face-up monsters on your opponent's side of the field."
+    },
+    {
+      "name": "Delinquent Duo",
+      "description": "Pay 1000 Life Points. Randomly select and discard 1 card from your opponent's hand. Your opponent then selects and discards another card from his/her hand."
+    },
+    {
+      "name": "Share the Pain",
+      "description": "Offer 1 monster on your side of the field as a Tribute. Your opponent must select 1 monster on his/her side of the field and offer it as a Tribute."
+    },
+    {
+      "name": "Horn of the Unicorn",
+      "description": "A monster equipped with this card increases its ATK and DEF by 700 points. When this card is sent from the field to the Graveyard, it returns to the top of your Deck."
+    },
+    {
+      "name": "Minar",
+      "description": "When this card is sent directly from your hand to the Graveyard by your opponent's card effect, inflict 1000 points of Direct Damage to your opponent's Life Points."
+    },
+    {
+      "name": "Illusionist Faceless Mage",
+      "description": "Manipulates enemy attacks with the power of illusion."
+    },
+    {
+      "name": "Mystical Sheep #1",
+      "description": "You can substitute this card for any 1 Fusion-Material Monster. You cannot substitute for any other Fusion-Material Monsters in the current Fusion."
+    },
+    {
+      "name": "Black Illusion Ritual",
+      "description": "This card is used to Ritual Summon \"Relinquished\". You must also offer monsters whose total Level Stars equal 1 or more from the field or your hand as a Tribute."
+    },
+    {
+      "name": "Destiny Board",
+      "description": "At the end of each of your opponent's turns, place 1 \"Spirit Message\" card from your hand or your Deck face-up to the field. If it is from your Deck, then shuffle your Deck. If \"Spirit Message\" cards \"I\", \"N\", \"A\" and \"L\" are all on thefield in their proper order, you are declared the winner. If any of the cards are destroyed or removed from the field while constructing the message, they are all sent to your Graveyard immediately."
+    },
+    {
+      "name": "Whiptail Crow",
+      "description": "Attacks from the skies with a whip-like tail."
+    },
+    {
+      "name": "Weather Report",
+      "description": "FLIP: Destroys all opponent's face-up \"Swords of Revealing Light\" on the field. If \"Swords of Revealing Light\" is destroyed, you can perform your Battle Phase twice this turn (or your next turn, if activated during opponent's turn)."
+    },
+    {
+      "name": "Umiiruka",
+      "description": "Increases the ATK of all WATER monsters by 500 points and decreases their DEF by 400 points."
+    },
+    {
+      "name": "Ushi Oni",
+      "description": "A bull fiend restored by the dark arts, this monster appears out of a jar."
+    },
+    {
+      "name": "Tailor of the Fickle",
+      "description": "Select 1 equipped Equip Card and switch it to another correct target."
+    },
+    {
+      "name": "Umi",
+      "description": "Increases the ATK and DEF of all Fish, Sea Serpent, Thunder, and Aqua-Type monsters by 200 points. Also decreases the ATK and DEF of all Machine and Pyro-Type monsters by 200 points."
+    },
+    {
+      "name": "Exchange",
+      "description": "Both players show their hands to each other. You both select 1 card from each other's hand and add it your own. When the cards are sent to the Graveyard, they are placed in the Graveyard of the original owner."
+    },
+    {
+      "name": "Serpent Night Dragon",
+      "description": "A dragon created from the soul of a wicked knight."
+    },
+    {
+      "name": "Celtic Guardian",
+      "description": "An elf who learned to wield a sword, he baffles enemies with lightning-swift attacks."
+    },
+    {
+      "name": "Oscillo Hero #2",
+      "description": "A creature that electrocutes opponents with bolts of lightning."
+    },
+    {
+      "name": "Electric Snake",
+      "description": "When this card is sent directly from your hand to the Graveyard by your opponent's card effect, you can draw 2 cards from your Deck."
+    },
+    {
+      "name": "Reinforcements",
+      "description": "Increase 1 selected monster's ATK by 500 points during the turn this card is activated."
+    },
+    {
+      "name": "Ancient Elf",
+      "description": "This elf is rumored to have lived for thousands of years. He leads an army of spirits against his enemies."
+    },
+    {
+      "name": "Robbin' Goblin",
+      "description": "Each time 1 of your monsters inflicts damage to your opponent's Life Points, 1 card is randomly selected from your opponent's hand and discarded to the Graveyard."
+    },
+    {
+      "name": "Royal Decree",
+      "description": "As long as this card remains face-up on the field, negate the effects of all Trap Cards except this card on the field."
+    },
+    {
+      "name": "Imperial Order",
+      "description": "As long as this card remains face-up on the field, negate the effects of all Spell Cards. Pay 700 Life Points during each of your Standby Phases. If you cannot, this card is destroyed."
+    },
+    {
+      "name": "Protector of the Throne",
+      "description": "While the king is away, this queen protects his throne with a mighty defense."
+    },
+    {
+      "name": "Invader of the Throne",
+      "description": "FLIP: Select 1 opponent's monster and switch control of it with this card. This effect cannot be activated during the Battle Phase."
+    },
+    {
+      "name": "Guardian of the Throne Room",
+      "description": "A robot guard built to protect throne rooms, it is armed with homing missiles."
+    },
+    {
+      "name": "Confiscation",
+      "description": "Pay 1000 Life Points to look at your opponent's hand. Select 1 card and discard it to the Graveyard."
+    },
+    {
+      "name": "Heavy Storm",
+      "description": "Destroys all Spell and Trap Cards on the field."
+    },
+    {
+      "name": "Oscillo Hero",
+      "description": "A strange warrior from another dimension."
+    },
+    {
+      "name": "Trap Hole",
+      "description": "If the ATK of a monster summoned by your opponent (excluding Special Summon) is 1000 points or more, the monster is destroyed."
+    },
+    {
+      "name": "Sonic Maid",
+      "description": "A maiden that uses sound to her advantage, she wields a scythe that's shaped like a musical note."
+    },
+    {
+      "name": "Commencement Dance",
+      "description": "This card is used to Ritual Summon \"Performance of Sword\". You must also offer monsters whose total Level Stars equal 6 or more as a Tribute from the field or your hand."
+    },
+    {
+      "name": "Ryu-Kishin Powered",
+      "description": "A gargoyle enhanced by the powers of darkness. Very sharp talons make it a worthy opponent."
+    },
+    {
+      "name": "Curse of Dragon",
+      "description": "A wicked dragon that taps into dark forces to execute a powerful attack."
+    },
+    {
+      "name": "Reaper of the Cards",
+      "description": "FLIP: Destroys 1 Trap Card on the field. If this card's target is face-down, flip it face-up. If the card is a Trap Card, it is destroyed. If not, it is returned to its face-down position. The flipped card is not activated."
+    },
+    {
+      "name": "Gaia Power",
+      "description": "Increases the ATK of all EARTH monsters by 500 points and decreases their DEF by 400 points."
+    },
+    {
+      "name": "Frog The Jam",
+      "description": "A slime with the head of a frog, it attacks by croaking terribly."
+    },
+    {
+      "name": "Tremendous Fire",
+      "description": "Inflicts 1000 points of Direct Damage to your opponent's Life Points and 500 points of Direct Damage to your Life Points."
+    },
+    {
+      "name": "Firegrass",
+      "description": "A fire-breathing plant found growing near volcanoes."
+    },
+    {
+      "name": "Gadget Soldier",
+      "description": "A rust-free machine warrior born to battle."
+    },
+    {
+      "name": "Catapult Turtle",
+      "description": "Offer 1 monster on your side of the field as a Tribute to inflict Direct Damage equal to half of the Tribute monster's ATK to your opponent's Life Points. Monsters used for a Tribute Summon or that are offered as Tributes due to other cards' effects are excluded."
+    },
+    {
+      "name": "The Immortal of Thunder",
+      "description": "FLIP: You gain 3000 Life Points. After this card is flipped, you lose 5000 Life Points when it is sent from the field to the Graveyard."
+    },
+    {
+      "name": "Solemn Judgment",
+      "description": "Pay half of your Life Points when your opponent either activates a Spell or Trap Card or summons a monster (including Special Summon) to negate the action and destroy the Spell Card, Trap Card, or summoned monster."
+    },
+    {
+      "name": "Turtle Oath",
+      "description": "This card is used to Ritual Summon \"Crab Turtle\". You must also offer monsters whose total Level Stars equal 8 or more as a Tribute from the field or your hand."
+    },
+    {
+      "name": "Masked Sorcerer",
+      "description": "When you inflict damage to your opponent's Life Points with this card, draw 1 card from your Deck."
+    },
+    {
+      "name": "Garoozis",
+      "description": "An axe-swinging beast-warrior with the head of a dragon."
+    },
+    {
+      "name": "Karbonala Warrior",
+      "description": "\"M-Warrior #1\" + \"M-Warrior #2\""
+    },
+    {
+      "name": "Rock Ogre Grotto #1",
+      "description": "Protected by a solid body of rock, this monster throws a bone-shattering punch."
+    },
+    {
+      "name": "Giant Soldier of Stone",
+      "description": "A giant warrior made of stone. A punch from this creature has earth-shaking results."
+    },
+    {
+      "name": "Blue-Winged Crown",
+      "description": "With hair shaped like a crown and a body encased in bluish white flames, this bird is a formidable sight."
+    },
+    {
+      "name": "Machine Conversion Factory",
+      "description": "A Machine-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Giga-Tech Wolf",
+      "description": "An iron wolf with razor-sharp fangs that can penetrate any armor."
+    },
+    {
+      "name": "Ray & Temperature",
+      "description": "The Sun and the North Wind join hands to deliver a devastating combination of heat and gale-force winds."
+    },
+    {
+      "name": "Goddess of Whim",
+      "description": "Toss a coin and call Heads or Tails. Call it right and this card's ATK will be doubled during this turn. Call it wrong and it will be halved during this turn."
+    },
+    {
+      "name": "Cannon Soldier",
+      "description": "Offer 1 monster on your side of the field as a Tribute to inflict 500 points of Direct Damage to your opponent's Life Points. Monsters used for a Tribute Summon or that are offered as Tributes due to other cards' effects are excluded."
+    },
+    {
+      "name": "Giant Flea",
+      "description": "A massive flea that feeds on the blood of its enemies."
+    },
+    {
+      "name": "Battle Steer",
+      "description": "A bull monster often found in the woods, it charges enemy monsters with a pair of deadly horns."
+    },
+    {
+      "name": "Megamorph",
+      "description": "If your Life Points are lower than your opponent's, the original ATK of a monster equipped with this card is doubled. If your Life Points are higher, the original ATK is halved."
+    },
+    {
+      "name": "Giant Rat",
+      "description": "When this card is sent to the Graveyard as a result of battle, you may select 1 EARTH monster with an ATK of 1500 or less from your Deck and Special Summon it to the field (no Tribute is required for monsters of Level 5 or more). The Deck is then shuffled."
+    },
+    {
+      "name": "Claw Reacher",
+      "description": "Stretching arms and razor-sharp claws make this monster a formidable opponent."
+    },
+    {
+      "name": "Mystic Tomato",
+      "description": "When this card is sent to the Graveyard as a result of battle, you may select 1 DARK monster with an ATK of 1500 or less from your Deck and Special Summon it to the field (no Tribute is required for monsters of Level 5 or more). The Deck is then shuffled."
+    },
+    {
+      "name": "Frenzied Panda",
+      "description": "A savage beast that carries a big bamboo stick for beating down its enemies."
+    },
+    {
+      "name": "Killer Needle",
+      "description": "A huge bee with exceptional strength that's particularly dangerous in a swarm."
+    },
+    {
+      "name": "King Fog",
+      "description": "A fiend that dwells in a blinding curtain of smoke."
+    },
+    {
+      "name": "Silver Bow and Arrow",
+      "description": "A Fairy-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Queen Bird",
+      "description": "This monster attacks enemies using its huge beak."
+    },
+    {
+      "name": "Stuffed Animal",
+      "description": "It may look like a harmless stuffed animal, but its zipper mouth deals a deadly bite."
+    },
+    {
+      "name": "Peacock",
+      "description": "A large peacock that launches its feathers in a lethal attack."
+    },
+    {
+      "name": "Painful Choice",
+      "description": "Select 5 cards from your Deck and show them to your opponent. Your opponent must select 1 card that will be added to your hand. Discard the remaining cards to the Graveyard."
+    },
+    {
+      "name": "Kumootoko",
+      "description": "A massive, intelligent spider that traps enemies with webbing."
+    },
+    {
+      "name": "Jellyfish",
+      "description": "An almost invisible, semi-transparent jellyfish that drifts in the sea."
+    },
+    {
+      "name": "Crab Turtle",
+      "description": "This monster can only be Ritual Summoned with the Ritual Spell Card, \"Turtle Oath\". You must also offer monsters whose total Level Stars equal 8 or more as a Tribute from the field or your hand."
+    },
+    {
+      "name": "Griggle",
+      "description": "When this card is face-up on the field and control shifts to your opponent, you gain 3000 Life Points. This effect can only be used once as long as this card remains face-up on the field."
+    },
+    {
+      "name": "Mother Grizzly",
+      "description": "When this card is sent to the Graveyard as a result of battle, you may select 1 WATER monster with an ATK of 1500 or less from your Deck and Special Summon it to the field in face-up Attack Position (no Tribute is required for monsters of Level 5 or more). The Deck is then shuffled."
+    },
+    {
+      "name": "Sangan",
+      "description": "When this card is sent from the field to the Graveyard, move 1 monster with an ATK of 1500 or less from your Deck to your hand. Your Deck is then shuffled."
+    },
+    {
+      "name": "Kuriboh",
+      "description": "Discard this card from your hand to the Graveyard to make the damage inflicted to your Life Points by 1 opponent's monster 0. This effect must be activated during your opponent's Battle Phase."
+    },
+    {
+      "name": "Great White",
+      "description": "A giant white shark with razor-sharp teeth."
+    },
+    {
+      "name": "Great Moth",
+      "description": "This monster can only be Special Summoned by offering \"Petit Moth\" as a Tribute on the 4th of your turns after \"Petit Moth\" has been equipped with \"Cocoon of Evolution\"."
+    },
+    {
+      "name": "Mikazukinoyaiba",
+      "description": "A dragon warrior of the moon armed with a crescent sword."
+    },
+    {
+      "name": "Feral Imp",
+      "description": "A playful little fiend that lurks in the dark, waiting to attack an unwary enemy."
+    },
+    {
+      "name": "Witch of the Black Forest",
+      "description": "When this card is sent from the field to the Graveyard, move 1 monster with a DEF of 1500 or less from your Deck to your hand. Your Deck is then shuffled."
+    },
+    {
+      "name": "Soul Exchange",
+      "description": "Select an opponent's monster and use it as a Tribute in place of one of your own. You must skip your Battle Phase for the turn in which this card is activated."
+    },
+    {
+      "name": "Kwagar Hercules",
+      "description": "\"Kuwagata Alpha\" + \"Hercules Beetle\""
+    },
+    {
+      "name": "Kuwagata Alpha",
+      "description": "A very vicious stag beetle that goes for the head."
+    },
+    {
+      "name": "Gate Guardian",
+      "description": "This card can only be Special Summoned by offering \"Sanga of the Thunder\", \"Kazejin\" and \"Suijin\" on your side of the field as a Tribute."
+    },
+    {
+      "name": "Wall of Illusion",
+      "description": "The monster attacking this creature is returned to its owner's hand. Any damage resulting from the attack is calculated normally."
+    },
+    {
+      "name": "The Stern Mystic",
+      "description": "FLIP: All face-down cards on the field are turned face-up, and then returned to their original positions. No card effects are activated when cards are turned face-up."
+    },
+    {
+      "name": "Gazelle the King of Mythical Beasts",
+      "description": "This monster moves so fast that it looks like an illusion to mortal eyes."
+    },
+    {
+      "name": "Mystic Horseman",
+      "description": "Half man and half horse, this monster is known for its extreme speed."
+    },
+    {
+      "name": "The Forceful Sentry",
+      "description": "Look at your opponent's hand, then select 1 card and return it to his/her Deck. The Deck is then shuffled."
+    },
+    {
+      "name": "Negate Attack",
+      "description": "When your opponent attacks with a monster, all attacks are negated and your opponent's Battle Phase ends."
+    },
+    {
+      "name": "Enchanting Mermaid",
+      "description": "A beautiful mermaid that lures voyagers to a watery grave."
+    },
+    {
+      "name": "Snatch Steal",
+      "description": "Take control of 1 of your opponent's face-up monsters. Your opponent gains 1000 Life Points at each of his/her Standby Phases."
+    },
+    {
+      "name": "Steel Ogre Grotto #1",
+      "description": "A steel idol worshipped in the Land of Machines."
+    },
+    {
+      "name": "Wasteland",
+      "description": "Increases the ATK and DEF of all Dinosaur, Zombie, and Rock-Type monsters by 200 points."
+    },
+    {
+      "name": "Queen of Autumn Leaves",
+      "description": "Queen of the Emerald Forest and wife of the Spirit King, she lives surrounded by vivid red leaves."
+    },
+    {
+      "name": "Pot of Greed",
+      "description": "Draw 2 cards from your Deck."
+    },
+    {
+      "name": "Pumpking the King of Ghosts",
+      "description": "If \"Castle of Dark Illusions\" is face-up on the field, increase the ATK and DEF of this card by 100 points. As long as this \"Castle of Dark Illusions\" remains face-up on the field, the ATK and DEF of this card continues to increase by 100 points during each of your Standby Phases. This effect continues until your 4th turn after the card is activated."
+    },
+    {
+      "name": "Cockroach Knight",
+      "description": "When this card has been sent to the Graveyard, it is returned to the top of the Deck."
+    },
+    {
+      "name": "Niwatori",
+      "description": "Swallows enemies whole and uses their essence as energy."
+    },
+    {
+      "name": "Change of Heart",
+      "description": "Select and control 1 opposing monster (regardless of position) on the field until the end of your turn."
+    },
+    {
+      "name": "Cosmo Queen",
+      "description": "Queen of the galaxies and mistress of the stars."
+    },
+    {
+      "name": "Ancient Lizard Warrior",
+      "description": "Before the dawn of man, this lizard warrior ruled supreme."
+    },
+    {
+      "name": "Goblin's Secret Remedy",
+      "description": "Increases your Life Points by 600 points."
+    },
+    {
+      "name": "Germ Infection",
+      "description": "The ATK of a non Machine-Type monster equipped with this card is decreased by 300 points at each of its Standby Phases."
+    },
+    {
+      "name": "Hitotsu-Me Giant",
+      "description": "A one-eyed behemoth with thick, powerful arms made for delivering punishing blows."
+    },
+    {
+      "name": "Mystical Space Typhoon",
+      "description": "Destroy 1 Spell or Trap Card on the field."
+    },
+    {
+      "name": "Final Destiny",
+      "description": "Discard 5 cards from your hand to destroy all the cards on the field."
+    },
+    {
+      "name": "Cyber Jar",
+      "description": "FLIP: Destroys all monsters on the field (including this monster). Both players then pick up (not Draw) 5 cards from the top of their respective Decks and show the cards to each other. Immediately Special Summon any Monster Cards of Level 4 or lower among them on the field in face-up Attack Position or face-down Defense Position. The rest of the cards picked up are placed in the players' hands."
+    },
+    {
+      "name": "Mesmeric Control",
+      "description": "When this card is played your opponent cannot change the position of monsters during his/her next turn."
+    },
+    {
+      "name": "Thousand-Eyes Restrict",
+      "description": "\"Relinquished\" + \"Thousand-Eyes Idol\". As long as this card remains face-up on the field, other monsters cannot change their positions or attack. This monster can take on the ATK and DEF of 1 opponent's monster on the field (a face-down monster results in an ATK and DEF of 0). Treat the selected monster as an Equip Spell Card and use it to equip \"Thousand-Eyes Restrict\". You may use this effect only once per turn and can equip \"Thousand-Eyes Restrict\" with only 1 monster at a time."
+    },
+    {
+      "name": "Thousand Dragon",
+      "description": "\"Time Wizard\" + \"Baby Dragon\""
+    },
+    {
+      "name": "Thousand Knives",
+      "description": "You can activate this card when you have \"Dark Magician\" on your side of the field. Destroy 1 monster on your opponent's side of the field."
+    },
+    {
+      "name": "Succubus Knight",
+      "description": "A warrior wizard adept in casting bone-chilling spells."
+    },
+    {
+      "name": "Relinquished",
+      "description": "This monster can take on the ATK and DEF of 1 opponent's monster on the field (a face-down monster results in an ATK and DEF of 0). Treat the selected monster as an Equip Spell Card and use it to equip \"Relinquished\". You may use this effect only once per turn and can equip \"Relinquished\" with only 1 monster at a time. When your opponent's monster attacks this monster with an ATK higher than \"Relinquished\", the equipped monster is destroyed instead of \"Relinquished\". Any Life Point damage you receive from the attacking monster when \"Relinquished\" is equipped is also inflicted on your opponent."
+    },
+    {
+      "name": "Punished Eagle",
+      "description": "\"Blue-Winged Crown\" + \"Niwatori\""
+    },
+    {
+      "name": "Empress Judge",
+      "description": "\"Queen's Double\" + \"Hibikime\""
+    },
+    {
+      "name": "Beautiful Headhuntress",
+      "description": "A vicious creature that has decapitated numerous enemy monsters."
+    },
+    {
+      "name": "Thunder Dragon",
+      "description": "Discard this card from your hand to the Graveyard to add up to 2 \"Thunder Dragon\" cards from your Deck to your hand. Your Deck is then shuffled. This effect is activated only during a Main Phase."
+    },
+    {
+      "name": "Raigeki",
+      "description": "Destroys all of your opponent's monsters on the field."
+    },
+    {
+      "name": "Sand Stone",
+      "description": "Appears from underground and attacks with long, snake-like tentacles."
+    },
+    {
+      "name": "Giant Red Seasnake",
+      "description": "A sea-dwelling snake that attacks passing enemies with its sharp teeth."
+    },
+    {
+      "name": "Kagemusha of the Blue Flame",
+      "description": "Serving as a double for the Ruler of the Blue Flame, he's a master swordsman that wields a fine blade."
+    },
+    {
+      "name": "Crawling Dragon #2",
+      "description": "A powerful dragon with teeth that can grind almost anything to dust."
+    },
+    {
+      "name": "Trial of Nightmare",
+      "description": "This fiend passes judgment on enemies that are locked in coffins."
+    },
+    {
+      "name": "Monster Reborn",
+      "description": "Select 1 Monster Card from either your opponent's or your own Graveyard and place it on the field under your control in Attack or Defense Position (face-up). This is considered a Special Summon."
+    },
+    {
+      "name": "Tribute to The Doomed",
+      "description": "Discard 1 card from your hand to the Graveyard to destroy 1 Monster Card on the field (regardless of its position)."
+    },
+    {
+      "name": "Doma The Angel of Silence",
+      "description": "This fairy rules over the end of existence."
+    },
+    {
+      "name": "Crush Card",
+      "description": "Offer 1 DARK monster with an ATK of 1000 or less on your side of the field as a Tribute. You and your opponent check all monsters on your opponent's side of the field, your opponent's hand, and all cards during your opponent's next 3 turns he/she draws and destroy all monsters with an ATK of 1500 or higher."
+    },
+    {
+      "name": "Spirit Message \"I\"",
+      "description": "This card can only be placed on the field when \"Destiny Board\" is active."
+    },
+    {
+      "name": "Spirit Message \"L\"",
+      "description": "This card can only be placed on the field when \"Destiny Board\" is active."
+    },
+    {
+      "name": "Spirit Message \"N\"",
+      "description": "This card can only be placed on the field when \"Destiny Board\" is active."
+    },
+    {
+      "name": "Spirit Message \"A\"",
+      "description": "This card can only be placed on the field when \"Destiny Board\" is active."
+    },
+    {
+      "name": "Paralyzing Potion",
+      "description": "A non Machine-Type monster equipped with this card cannot attack."
+    },
+    {
+      "name": "Curse of Fiend",
+      "description": "Changes the battle positions of all Attack Position monsters on the field to Defense Position and vice-versa. These positions cannot be changed during the turn this card is activated except by the effect of a Spell, Trap or Effect Monster Card. You can activate this card only during your Standby Phase."
+    },
+    {
+      "name": "Giant Germ",
+      "description": "When this card is sent to the Graveyard as a result of battle, inflict 500 points of Direct Damage to your opponent's Life Points. You can also take cards of the same name from your Deck and Special Summon them to the field in face-up Attack Position. The Deck is then shuffled."
+    },
+    {
+      "name": "Shining Angel",
+      "description": "When this card is sent to the Graveyard as a result of battle, you can select 1 LIGHT monster with an ATK of 1500 or less from your Deck and Special Summon it to the field in face-up Attack Position (no Tribute is required for monsters of Level 5 or more). The Deck is then shuffled."
+    },
+    {
+      "name": "Luminous Spark",
+      "description": "Increases the ATK of all LIGHT monsters by 500 points and decreases their DEF by 400 points."
+    },
+    {
+      "name": "Baron of the Fiend Sword",
+      "description": "An aristocrat who wields a sword possessed by a malicious spirit that preys on the weak."
+    },
+    {
+      "name": "The Judgement Hand",
+      "description": "An all-powerful hand that delivers ruthless attacks."
+    },
+    {
+      "name": "Judge Man",
+      "description": "This club-wielding warrior battles to the end and will never surrender."
+    },
+    {
+      "name": "Shadow Ghoul",
+      "description": "Increase the ATK of this monster by 100 points for each monster in your own Graveyard."
+    },
+    {
+      "name": "The 13th Grave",
+      "description": "A zombie that suddenly appeared from plot #13 - an empty grave."
+    },
+    {
+      "name": "Sword of Deep-Seated",
+      "description": "A Monster Card equipped with this card increases its ATK and DEF by 500 points. When this card is sent to the Graveyard, place it on top of your Deck."
+    },
+    {
+      "name": "Stop Defense",
+      "description": "Select 1 of your opponent's monsters and switch it to Attack Position. If the card is face-down, flip it face-up. If the card has a flip effect, it is activated immediately."
+    },
+    {
+      "name": "Horn of Heaven",
+      "description": "Offer 1 of your own monsters on the field as a Tribute to negate the summon (including Special Summon) of a monster and destroy it."
+    },
+    {
+      "name": "Eternal Rest",
+      "description": "Destroys all monsters equipped with Equip Cards."
+    },
+    {
+      "name": "Castle Walls",
+      "description": "Increase a selected monster's DEF by 500 points during the turn this card is activated."
+    },
+    {
+      "name": "Queen's Double",
+      "description": "This monster may attack your opponent's Life Points directly."
+    },
+    {
+      "name": "Jirai Gumo",
+      "description": "When you attack with this card, toss a coin and call it. If you call it right, attack normally. If you call it wrong, reduce your Life Points by half before attacking."
+    },
+    {
+      "name": "Tripwire Beast",
+      "description": "This creature attacks with electromagnetic waves."
+    },
+    {
+      "name": "Ring of Magnetism",
+      "description": "This card can only be equipped to a monster on your side of the field. The monster equipped with this card decreases its ATK and DEF by 500 points. In addition, all the monsters on your opponent's side of the field must attack the monster equipped with this card if they choose to attack."
+    },
+    {
+      "name": "Silver Fang",
+      "description": "A snow wolf that's beautiful to the eye, but absolutely vicious in battle."
+    },
+    {
+      "name": "Fissure",
+      "description": "Destroys 1 opponent's face-up monster with the lowest ATK."
+    },
+    {
+      "name": "Dark King of the Abyss",
+      "description": "It's said that this King of the Netherworld once had the power to rule over the dark."
+    },
+    {
+      "name": "Deepsea Shark",
+      "description": "\"Bottom Dweller\" + \"Tongyo\""
+    },
+    {
+      "name": "Cocoon of Evolution",
+      "description": "You may treat this card as an Equip Spell Card on a face-up \"Petit Moth\" on the field. When equipped, the ATK and DEF of \"Petit Moth\" becomes the same as \"Cocoon of Evolution\"."
+    },
+    {
+      "name": "Goddess with the Third Eye",
+      "description": "You can substitute this card for any 1 Fusion-Material Monster. You cannot substitute for any other Fusion-Material Monsters in the current Fusion."
+    },
+    {
+      "name": "Bottom Dweller",
+      "description": "This is one sea creature whose wrath is something monsters fear to face."
+    },
+    {
+      "name": "Jinzo #7",
+      "description": "This monster may attack your opponent's Life Points directly."
+    },
+    {
+      "name": "Suijin",
+      "description": "Reduce the ATK of an opponent's monster attacking this card to 0. This effect can be used only once. The card's owner chooses when to activate this effect."
+    },
+    {
+      "name": "Hoshiningen",
+      "description": "As long as this card remains face-up on the field, increase the ATK of all LIGHT monsters by 500 points and decrease the ATK of all DARK monsters by 400 points."
+    },
+    {
+      "name": "Sky Dragon",
+      "description": "A flying dragon with four wings housing some very dangerous blades."
+    },
+    {
+      "name": "Skull Red Bird",
+      "description": "This monster swoops down and attacks with a rain of knives stored in its wings."
+    },
+    {
+      "name": "Skull Knight",
+      "description": "\"Tainted Wisdom\" + \"Ancient Brain\""
+    },
+    {
+      "name": "Dokurorider",
+      "description": "This monster can only be Ritual Summoned with the Ritual Spell Card, \"Revival of Dokurorider\". You must also offer monsters whose total Level Stars equal 6 or more as a Tribute from the field or your hand."
+    },
+    {
+      "name": "Revival of Dokurorider",
+      "description": "This card is used to Ritual Summon \"Dokurorider\". You must also offer monsters whose total Level Stars equal 6 or more as a Tribute from the field or your hand."
+    },
+    {
+      "name": "Star Boy",
+      "description": "As long as this card remains face-up on the field, increase the ATK of all WATER monsters by 500 points and decrease the ATK of all FIRE monsters by 400 points."
+    },
+    {
+      "name": "Hinotama Soul",
+      "description": "An intensely hot flame creature that rams anything standing in its way."
+    },
+    {
+      "name": "Spike Seadra",
+      "description": "Using the spikes sprouting from its body, this creature stabs its opponents and floods them with electricity."
+    },
+    {
+      "name": "Nimble Momonga",
+      "description": "When this card is sent to the Graveyard as a result of battle, increase your Life Points by 1000 points. You can also take cards of the same name from your Deck and Special Summon them to the field in face-down Defense Position. The Deck is then shuffled."
+    },
+    {
+      "name": "Mystical Sheep #2",
+      "description": "A monstrous sheep with a long tail for hypnotizing enemies."
+    },
+    {
+      "name": "Chorus of Sanctuary",
+      "description": "Increases the DEF of all Defense Position monsters by 500 points."
+    },
+    {
+      "name": "Mirror Force",
+      "description": "When an opponent's monster attacks, negate the attack and destroy all opponent's monsters in Attack Position."
+    },
+    {
+      "name": "Faith Bird",
+      "description": "This long-tailed bird blinds its enemies with mystical light."
+    },
+    {
+      "name": "Magician of Faith",
+      "description": "FLIP: Select 1 Spell Card from your Graveyard and return it to your hand."
+    },
+    {
+      "name": "Thousand-Eyes Idol",
+      "description": "A wicked entity that controls the hearts of men, its thousand eyes are able to see and expand the negative influences in an individual's soul."
+    },
+    {
+      "name": "Senju of the Thousand Hands",
+      "description": "When this card is summoned to the field (excluding Special Summon), you may move 1 Ritual Monster Card from your Deck to your hand. The Deck is then shuffled."
+    },
+    {
+      "name": "Warrior of Tradition",
+      "description": "\"Sonic Maid\" + \"Beautiful Headhuntress\""
+    },
+    {
+      "name": "Millennium Shield",
+      "description": "A Millennium item, it's rumored to block any strong attack."
+    },
+    {
+      "name": "Sogen",
+      "description": "Increases the ATK and DEF of all Beast-Warrior and Warrior-Type monsters by 200 points."
+    },
+    {
+      "name": "Twin-Headed Thunder Dragon",
+      "description": "\"Thunder Dragon\" + \"Thunder Dragon\""
+    },
+    {
+      "name": "Sonic Bird",
+      "description": "When this card is summoned (excluding Special Summon), you may move 1 Ritual Spell Card from your Deck to your hand. The Deck is then shuffled."
+    },
+    {
+      "name": "Dark Elf",
+      "description": "This card requires a cost of 1000 of your own Life Points to attack."
+    },
+    {
+      "name": "Dark Gray",
+      "description": "Entirely gray, this beast has rarely been seen by mortal eyes."
+    },
+    {
+      "name": "Mystic Plasma Zone",
+      "description": "Increases the ATK of all DARK monsters by 500 points and decreases their DEF by 400 points."
+    },
+    {
+      "name": "Meda Bat",
+      "description": "An eyeball fiend created by a servant of the wicked, it uses \"Dark Blasts\" to blow away its enemies."
+    },
+    {
+      "name": "Turtle Tiger",
+      "description": "A tiger encased in a protective shell that attacks with razor-sharp fangs."
+    },
+    {
+      "name": "Big Eye",
+      "description": "FLIP: See the 5 cards from the top of your Deck, arrange them in any order desired, and replace them on top of the Deck."
+    },
+    {
+      "name": "Raise Body Heat",
+      "description": "A Dinosaur-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Dharma Cannon",
+      "description": "A monstrous creature whose body is lined with cannons that never miss their targets."
+    },
+    {
+      "name": "Tyhone",
+      "description": "Capable of firing cannonballs from its mouth for long-range attacks, this creature is particularly effective in mountain battles."
+    },
+    {
+      "name": "Jigen Bakudan",
+      "description": "FLIP: After this card is flipped, offer it as a Tribute during your Standby Phase to destroy all monsters on your side of the field and inflict Direct Damage equal to half of the total ATK of the destroyed cards (excluding this monster) to your opponent's Life Points."
+    },
+    {
+      "name": "Hyozanryu",
+      "description": "A dragon created from a massive diamond that sparkles with blinding light."
+    },
+    {
+      "name": "Takuhee",
+      "description": "This bird is known far and wide as a harbinger of doom."
+    },
+    {
+      "name": "Takriminos",
+      "description": "A member of a race of sea serpents that freely travels through the sea."
+    },
+    {
+      "name": "The Reliable Guardian",
+      "description": "Increase 1 monster's DEF by 700 points during the turn this card is activated."
+    },
+    {
+      "name": "Tongyo",
+      "description": "This monster captures other fish with its long tongue and sucks the energy out of them."
+    },
+    {
+      "name": "Dancing Elf",
+      "description": "An elf that dances across the sky with wings of razor-sharp blades."
+    },
+    {
+      "name": "Performance of Sword",
+      "description": "This monster can only be Ritual Summoned with the Ritual Spell Card, \"Commencement Dance\". You must also offer monsters whose total Level Stars equal 6 or more as a Tribute from the field or your hand."
+    },
+    {
+      "name": "Ultimate Offering",
+      "description": "At the cost of 500 Life Points per monster, a player is allowed an extra Normal Summon or Set."
+    },
+    {
+      "name": "Dian Keto the Cure Master",
+      "description": "Increases your Life Points by 1000 points."
+    },
+    {
+      "name": "Crawling Dragon",
+      "description": "This weakened dragon can no longer fly, but is still a deadly force to be reckoned with."
+    },
+    {
+      "name": "Twin Long Rods #2",
+      "description": "An amphibious creature with two whip-like tails."
+    },
+    {
+      "name": "Toll",
+      "description": "As long as this card remains face-up on the field, both you and your opponent must pay 500 Life Points per monster to attack."
+    },
+    {
+      "name": "Two-Mouth Darkruler",
+      "description": "A dinosaur with two deadly jaws, it stores electricity in its horn and releases high voltage bolts from the mouth on its back."
+    },
+    {
+      "name": "Maiden of the Moonlight",
+      "description": "A sorcerer blessed by lunar light with powers far beyond mortal comprehension."
+    },
+    {
+      "name": "Dragon Piper",
+      "description": "FLIP: Destroys \"Dragon Capture Jar\", and turns all face-up Dragon-Type monsters to Attack Position."
+    },
+    {
+      "name": "Princess of Tsurugi",
+      "description": "FLIP: Inflicts 500 points of Direct Damage to your opponent's Life Points for each Spell and Trap Card your opponent has on the field."
+    },
+    {
+      "name": "Turu-Purun",
+      "description": "A strange, one-eyed monster that can fell an enemy with a single stab of its spear."
+    },
+    {
+      "name": "Launcher Spider",
+      "description": "A mechanical spider with rocket launchers capable of random fire."
+    },
+    {
+      "name": "Disk Magician",
+      "description": "This monster hides in a saucer and only appears when executing an attack."
+    },
+    {
+      "name": "Axe of Despair",
+      "description": "A monster equipped with this card increases its ATK by 1000 points. When this card is sent from the field to the Graveyard, you can offer 1 monster from the field as a Tribute to place it on top of your Deck."
+    },
+    {
+      "name": "Summoned Skull",
+      "description": "A fiend with dark powers for confusing the enemy. Among the Fiend-Type monsters, this monster boasts considerable force."
+    },
+    {
+      "name": "Rising Air Current",
+      "description": "Increases the ATK of all WIND monsters by 500 points and decreases their DEF by 400 points."
+    },
+    {
+      "name": "Sorcerer of the Doomed",
+      "description": "A slave of the dark arts, this sorcerer is a master of life-extinguishing spells."
+    },
+    {
+      "name": "Corroding Shark",
+      "description": "A zombie shark that can deliver its lethal curse with a spell."
+    },
+    {
+      "name": "Steel Scorpion",
+      "description": "A non Machine-Type Monster attacking \"Steel Scorpion\" will be destroyed at the End Phase of your opponent's 2nd turn after the attack."
+    },
+    {
+      "name": "The Bistro Butcher",
+      "description": "When this card inflicts damage to your opponent, your opponent must draw 2 cards from his/her Deck."
+    },
+    {
+      "name": "Zoa",
+      "description": "A monster whose full potential can be achieved when outfitted with \"Metalmorph\"."
+    },
+    {
+      "name": "Bickuribox",
+      "description": "\"Crass Clown\" + \"Dream Clown\""
+    },
+    {
+      "name": "Card Destruction",
+      "description": "Both players must discard their entire hands and draw the same number of cards that they discarded from their respective Decks."
+    },
+    {
+      "name": "Electric Lizard",
+      "description": "A non Zombie-Type monster attacking \"Electric Lizard\" cannot attack on its following turn."
+    },
+    {
+      "name": "Goblin Fan",
+      "description": "As long as this card remains face-up on the field, destroy all Flip Summoned monsters of Level 2 or lower. At that time, their effects are not activated."
+    },
+    {
+      "name": "Electro-Whip",
+      "description": "A Thunder-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Soul of the Pure",
+      "description": "Increases your Life Points by 800 points."
+    },
+    {
+      "name": "Fairy's Hand Mirror",
+      "description": "Switch the opponent's Spell Card effect that specifically designates 1 monster as a target to another correctly targeted monster."
+    },
+    {
+      "name": "Graceful Charity",
+      "description": "Draw 3 cards from your Deck, then discard any 2 cards from your hand."
+    },
+    {
+      "name": "Legendary Sword",
+      "description": "A Warrior-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Masaki the Legendary Swordsman",
+      "description": "Legendary swordmaster Masaki is a veteran of over 100 battles."
+    },
+    {
+      "name": "Seven Tools of the Bandit",
+      "description": "Pay 1000 of your Life Points to negate the activation of a Trap Card and destroy it."
+    },
+    {
+      "name": "Stim-Pack",
+      "description": "A monster equipped with this card increases its ATK by 700 points. Its ATK is then decreased by 200 points at each of its Standby Phases."
+    },
+    {
+      "name": "Time Wizard",
+      "description": "Toss a coin and call Heads or Tails. If you call it right, your opponent's monsters on the field are destroyed. If you call it wrong, your own monsters on the field are destroyed and you lose Life Points equal to half the total ATK of the destroyed monsters. This card can be used only during your own turn, once per turn."
+    },
+    {
+      "name": "Snake Fang",
+      "description": "Decrease 1 selected monster's DEF by 500 points during the turn this card is activated."
+    },
+    {
+      "name": "Rush Recklessly",
+      "description": "Increase 1 monster's ATK by 700 points during the turn this card is activated."
+    },
+    {
+      "name": "Roaring Ocean Snake",
+      "description": "\"Mystic Lamp\" + \"Hyosube\""
+    },
+    {
+      "name": "Flying Penguin",
+      "description": "A very rare penguin that takes to the air with ears shaped like wings."
+    },
+    {
+      "name": "Tri-Horned Dragon",
+      "description": "An unworthy dragon with three sharp horns sprouting from its head."
+    },
+    {
+      "name": "Ryu-Ran",
+      "description": "A vicious little dragon sheltered in an egg that looks deceptively harmless."
+    },
+    {
+      "name": "Dragon Seeker",
+      "description": "When this card is Summoned (excluding Special Summon), destroy 1 face-up Dragon-Type monster on the field."
+    },
+    {
+      "name": "Dragon Capture Jar",
+      "description": "All Dragon-Type monsters on the field are switched to Defense Position and remain in this position as long as this card is active."
+    },
+    {
+      "name": "Dragon Zombie",
+      "description": "A dragon revived by sorcery. Its breath is highly corrosive."
+    },
+    {
+      "name": "Dragon Treasure",
+      "description": "A Dragon-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Flying Kamakiri #1",
+      "description": "When this card is sent to the Graveyard as a result of battle, you may select 1 WIND monster with an ATK of 1500 or less from your Deck and Special Summon it to the field in face-up Attack Position (no Tribute is required for monsters of Level 5 or more). The Deck is then shuffled."
+    },
+    {
+      "name": "Trap Master",
+      "description": "FLIP: Destroys 1 Trap Card on the field. If this card's target is face-down, flip it face-up. If the card is a Trap Card, it is destroyed. If not, it is returned to its face-down position. The flipped card is not activated."
+    },
+    {
+      "name": "Dream Clown",
+      "description": "When this card is changed from Attack Position to Defense Position, select and destroy 1 monster on your opponent's side of the field."
+    },
+    {
+      "name": "Winged Dragon, Guardian of the Fortress #1",
+      "description": "A dragon commonly found guarding mountain fortresses. Its signature attack is a sweeping dive from out of the blue."
+    },
+    {
+      "name": "Kurama",
+      "description": "A vicious bird that attacks from the skies with its whip-like tail."
+    },
+    {
+      "name": "Trent",
+      "description": "A guardian of the woods, this massive tree is believed to be immortal."
+    },
+    {
+      "name": "Misairuzame",
+      "description": "A missile-launching fish protected by deadly spikes."
+    },
+    {
+      "name": "Upstart Goblin",
+      "description": "Draw 1 card from your Deck. Your opponent gains 1000 Life Points."
+    },
+    {
+      "name": "Needle Worm",
+      "description": "FLIP: Discard 5 cards from the top of your opponent's Deck to his/her Graveyard."
+    },
+    {
+      "name": "Fake Trap",
+      "description": "When your opponent uses a Spell, Trap, or Effect Monster Card to destroy your Trap Card(s), this card can be destroyed as a substitute for your Trap Card(s)."
+    },
+    {
+      "name": "Two-Headed King Rex",
+      "description": "A powerful monster whose two heads attack as one."
+    },
+    {
+      "name": "Three-Legged Zombies",
+      "description": "A pair of friendly skeletons, lean and fat, that travel with extreme difficulty."
+    },
+    {
+      "name": "Beastking of the Swamps",
+      "description": "You can substitute this card for any 1 Fusion-Material Monster. You cannot substitute for any other Fusion-Material Monsters in the current Fusion."
+    },
+    {
+      "name": "Eatgaboon",
+      "description": "If the ATK of a monster summoned by your opponent (excluding Special Summon) is 500 points or less, the monster is destroyed."
+    },
+    {
+      "name": "Nemuriko",
+      "description": "A child-like creature that controls a sleep fiend to beckon enemies into eternal slumber."
+    },
+    {
+      "name": "House of Adhesive Tape",
+      "description": "If the DEF of a monster summoned by your opponent (excluding Special Summon) is 500 points or less, the monster is destroyed."
+    },
+    {
+      "name": "Mystic Clown",
+      "description": "Nothing can stop the mad attack of this powerful creature."
+    },
+    {
+      "name": "Hard Armor",
+      "description": "A living suit of armor that attacks enemies with a bone-jarring tackle."
+    },
+    {
+      "name": "Molten Destruction",
+      "description": "Increases the ATK of all FIRE monsters by 500 points and decreases their DEF by 400 points."
+    },
+    {
+      "name": "Lava Battleguard",
+      "description": "Increase the ATK of this card by 500 points for each face-up \"Swamp Battleguard\" on your side of the field."
+    },
+    {
+      "name": "Swamp Battleguard",
+      "description": "Increase the ATK of this monster by 500 points for every face-up \"Lava Battleguard\" on your side of the field."
+    },
+    {
+      "name": "Harpie's Feather Duster",
+      "description": "Destroys all of your opponent's Spell and Trap Cards on the field."
+    },
+    {
+      "name": "Harpie Lady",
+      "description": "This human-shaped animal with wings is beautiful to watch but deadly in battle."
+    },
+    {
+      "name": "Harpie Lady Sisters",
+      "description": "This monster can only be Special Summoned with the Spell Card \"Elegant Egotist\"."
+    },
+    {
+      "name": "Spirit of the Harp",
+      "description": "A spirit that soothes the soul with the music of its heavenly harp."
+    },
+    {
+      "name": "Lady of Faith",
+      "description": "Soothes the souls of others by chanting a mysterious spell."
+    },
+    {
+      "name": "Versago the Destroyer",
+      "description": "You can substitute this card for any 1 Fusion-Material Monster. You cannot substitute for any other Fusion-Material Monsters in the current Fusion."
+    },
+    {
+      "name": "Destroyer Golem",
+      "description": "A golem with a massive right hand for crushing its victims."
+    },
+    {
+      "name": "Ring of Destruction",
+      "description": "Destroy 1 face-up Monster Card and inflict Direct Damage equal to the destroyed card's ATK to the Life Points of both you and your opponent."
+    },
+    {
+      "name": "Call of the Grave",
+      "description": "You can activate this card when your opponent activates \"Monster Reborn\". Negate the effect of \"Monster Reborn\"."
+    },
+    {
+      "name": "Gravedigger Ghoul",
+      "description": "Select 2 Monster Cards from your opponent's Graveyard. These Monster Cards are removed from play for the remainder of the Duel."
+    },
+    {
+      "name": "Gravekeeper's Servant",
+      "description": "Each time your opponent attacks with a monster, the opponent must send 1 card from the top of his/her Deck to the Graveyard."
+    },
+    {
+      "name": "Two-Pronged Attack",
+      "description": "Select and destroy 2 of your monsters and 1 of your opponent's monsters."
+    },
+    {
+      "name": "The Unhappy Maiden",
+      "description": "When this card is sent to the Graveyard as a result of battle, the Battle Phase for that turn ends immediately."
+    },
+    {
+      "name": "Hane-Hane",
+      "description": "FLIP: Select 1 Monster Card on the field (regardless of position) and return it to its owner's hand."
+    },
+    {
+      "name": "Premature Burial",
+      "description": "Pay 800 Life Points. Select 1 Monster Card from your Graveyard, Special Summon it on the field in face-up Attack Position, and equip it with this card. When this card is destroyed, the monster is also destroyed."
+    },
+    {
+      "name": "Giant Trunade",
+      "description": "Returns all Spell and Trap Cards on the field to the respective owner's hands."
+    },
+    {
+      "name": "Parrot Dragon",
+      "description": "A dragon from the cartoons that's more dangerous than it appears to be."
+    },
+    {
+      "name": "Hungry Burger",
+      "description": "This monster can only be Ritual Summoned with the Ritual Spell Card, \"Hamburger Recipe\". You must also offer monsters whose total Level Stars equal 6 or more as a Tribute from the field or your hand."
+    },
+    {
+      "name": "Hunter Spider",
+      "description": "This monster feeds on whatever it catches in its web."
+    },
+    {
+      "name": "Hamburger Recipe",
+      "description": "This card is used to Ritual Summon \"Hungry Burger\". You must also offer monsters whose total Level Stars equal 6 or more as a Tribute from the field or your hand."
+    },
+    {
+      "name": "Final Flame",
+      "description": "Inflicts 600 points of Direct Damage to your opponent's Life Points."
+    },
+    {
+      "name": "Bean Soldier",
+      "description": "A plant-warrior that attacks with seeds and sword."
+    },
+    {
+      "name": "Swords of Revealing Light",
+      "description": "Counting from your opponent's turn, none of your opponent's monsters can attack for 3 turns of his/her own. When this card is activated, opponent's face-down monsters at that time are turned face-up, but remain in Defense Position. Any effects the monsters may have are immediately activated."
+    },
+    {
+      "name": "Horn of Light",
+      "description": "A monster equipped with this card increases its DEF by 800 points. When this card is sent from the field to the Graveyard, you can pay 500 Life Points to place it on top of your Deck."
+    },
+    {
+      "name": "Book of Secret Arts",
+      "description": "A Spellcaster-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Man-Eating Treasure Chest",
+      "description": "A monster disguised as a treasure chest that is known to attack the unwary adventurer."
+    },
+    {
+      "name": "Man-Eater Bug",
+      "description": "FLIP: Destroys 1 monster on the field (regardless of position)."
+    },
+    {
+      "name": "Sparks",
+      "description": "Inflicts 200 points of Direct Damage to your opponent's Life Points."
+    },
+    {
+      "name": "Hibikime",
+      "description": "Confuses enemy monsters with a noise that is harsh to the ears."
+    },
+    {
+      "name": "Hyosube",
+      "description": "This amphibian is strong on the attack, but leaves much to be desired when defending."
+    },
+    {
+      "name": "Anti Raigeki",
+      "description": "When your opponent activates \"Raigeki\", all of your opponent's monsters are destroyed in place of your own."
+    },
+    {
+      "name": "Fire Kraken",
+      "description": "A squid that thrives on fire and heat."
+    },
+    {
+      "name": "Hinotama",
+      "description": "Inflicts 500 points of Direct Damage to your opponent's Life Points."
+    },
+    {
+      "name": "Dark Witch",
+      "description": "A popular creature in mythology that delivers fatal attacks with a sharp spear."
+    },
+    {
+      "name": "Exodia the Forbidden One",
+      "description": "An automatic victory can be declared by the player whose hand contains this card together with the Left Leg/Right Leg/Left Arm/Right Arm of the Forbidden One."
+    },
+    {
+      "name": "Left Leg of the Forbidden One",
+      "description": "A forbidden left leg sealed by spell. Whosoever breaks this seal will know infinite power."
+    },
+    {
+      "name": "Left Arm of the Forbidden One",
+      "description": "A forbidden left arm sealed by spell. Whosoever breaks this seal will know infinite power."
+    },
+    {
+      "name": "Right Leg of the Forbidden One",
+      "description": "A forbidden right leg sealed by spell. Whosoever breaks this seal will know infinite power."
+    },
+    {
+      "name": "Right Arm of the Forbidden One",
+      "description": "A forbidden right arm sealed by spell. Whosoever breaks this seal will know infinite power."
+    },
+    {
+      "name": "Kazejin",
+      "description": "Reduce the ATK of an opponent's monster attacking this card to 0. This effect can be used only once. The card's owner chooses when to activate this effect."
+    },
+    {
+      "name": "Follow Wind",
+      "description": "A Winged Beast-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Ancient One of the Deep Forest",
+      "description": "This creature adopts the form of a white goat living in the forest, but is actually a Forest Elder."
+    },
+    {
+      "name": "Swordstalker",
+      "description": "A monster formed by the vengeful souls of those who passed away in battle."
+    },
+    {
+      "name": "Petit Angel",
+      "description": "A quick-moving and tiny fairy that's very difficult to hit."
+    },
+    {
+      "name": "Petit Moth",
+      "description": "This small but deadly creature is better off avoided."
+    },
+    {
+      "name": "Petit Dragon",
+      "description": "A very small dragon known for its vicious attacks."
+    },
+    {
+      "name": "Fusionist",
+      "description": "\"Petit Angel\" + \"Mystical Sheep #2\""
+    },
+    {
+      "name": "Black Pendant",
+      "description": "A monster equipped with this card increases its ATK by 500 points. When this card is sent from the field to the Graveyard, inflict 500 points of Direct Damage to your opponent's Life Points."
+    },
+    {
+      "name": "Dark Hole",
+      "description": "Destroys all monsters on the field."
+    },
+    {
+      "name": "Dark Magician",
+      "description": "The ultimate wizard in terms of attack and defense."
+    },
+    {
+      "name": "Vorse Raider",
+      "description": "The axe in the hand of this evil animal has tasted the blood of many monsters."
+    },
+    {
+      "name": "Flower Wolf",
+      "description": "\"Silver Fang\" + \"Darkworld Thorns\""
+    },
+    {
+      "name": "Prevent Rat",
+      "description": "This creature is shielded with a tough hide of hair and is excellent at defending itself."
+    },
+    {
+      "name": "Blue-Eyes Ultimate Dragon",
+      "description": "\"Blue-Eyes White Dragon\" + \"Blue-Eyes White Dragon\" + \"Blue-Eyes White Dragon\""
+    },
+    {
+      "name": "Armed Ninja",
+      "description": "FLIP: Destroys 1 Spell Card on the field. If this card's target is face-down, flip it face-up. If the card is a Spell Card, it is destroyed. If not, it is returned to its face-down position. The flipped card is not activated."
+    },
+    {
+      "name": "Flame Ghost",
+      "description": "\"Skull Servant\" + \"Dissolverock\""
+    },
+    {
+      "name": "Bladefly",
+      "description": "As long as this card remains face-up on the field, increase the ATK of all WIND monsters by 500 points and decrease the ATK of all EARTH monsters by 400 points."
+    },
+    {
+      "name": "Shining Friendship",
+      "description": "The peacemaker among monsters."
+    },
+    {
+      "name": "Pale Beast",
+      "description": "With skin tinged a bluish-white, this strange creature is a fearsome sight to behold."
+    },
+    {
+      "name": "Basic Insect",
+      "description": "Usually found traveling in swarms, this creature's ideal environment is the forest."
+    },
+    {
+      "name": "Baby Dragon",
+      "description": "Much more than just a child, this dragon is gifted with untapped power."
+    },
+    {
+      "name": "Hercules Beetle",
+      "description": "A massive beetle with a tough carapace and a dangerous horn."
+    },
+    {
+      "name": "Penguin Knight",
+      "description": "When this card is sent directly from your Deck to the Graveyard by an opponent's card effect, combine your Graveyard cards with your own Deck, shuffle them and form a new Deck."
+    },
+    {
+      "name": "Mystical Elf",
+      "description": "A delicate elf that lacks offense, but has a terrific defense backed by mystical power."
+    },
+    {
+      "name": "Seiyaryu",
+      "description": "A mystical dragon that burns away the unworthy with its mystic flames."
+    },
+    {
+      "name": "Nobleman of Extermination",
+      "description": "Destroy 1 face-down Spell or Trap Card and remove it from play. If the card is a Trap Card, both players must remove all Trap Cards of the same name from their respective Decks and remove them from play. The Decks are then shuffled."
+    },
+    {
+      "name": "Power of Kaishin",
+      "description": "An Aqua-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Charubin the Fire Knight",
+      "description": "\"Monster Egg\" + \"Hinotama Soul\""
+    },
+    {
+      "name": "Fireyarou",
+      "description": "A malevolent creature wrapped in flames that attacks enemies with intense fire."
+    },
+    {
+      "name": "Flame Manipulator",
+      "description": "This Spellcaster attacks enemies with fire-related spells such as \"Sea of Flames\" and \"Wall of Fire\"."
+    },
+    {
+      "name": "Giant Turtle Who Feeds on Flames",
+      "description": "A crimson-shelled tortoise that feeds on flames."
+    },
+    {
+      "name": "White Magical Hat",
+      "description": "When this card inflicts damage to your opponent's Life Points, 1 card must be discarded randomly from your opponent's hand to the Graveyard."
+    },
+    {
+      "name": "White Hole",
+      "description": "When your opponent plays \"Dark Hole\", the monsters on your side of the field are not destroyed."
+    },
+    {
+      "name": "Spirit of the Books",
+      "description": "This wise spirit dwells in books, using its accumulated knowledge to defeat enemies."
+    },
+    {
+      "name": "Crass Clown",
+      "description": "When this card is changed from Defense Position to Attack Position, return 1 monster on your opponent's side of the field to the owner's hand."
+    },
+    {
+      "name": "Darkworld Thorns",
+      "description": "A thorny plant found in the darklands that wraps itself around any unwary traveler."
+    },
+    {
+      "name": "Cyber Soldier of Darkworld",
+      "description": "A mechanical soldier that won't stop attacking until all life readings have been extinguished from its sensors."
+    },
+    {
+      "name": "Vile Germs",
+      "description": "A Plant-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "M-Warrior #1",
+      "description": "Specializing in combination attacks, this warrior uses magnetism to block an enemy's escape."
+    },
+    {
+      "name": "M-Warrior #2",
+      "description": "Specializing in combination attacks, this warrior is equipped with a tough, magnetically coated armor."
+    },
+    {
+      "name": "Dissolverock",
+      "description": "A monster born in the lava pits, it generates intense heat that can melt away its enemies."
+    },
+    {
+      "name": "Magical Ghost",
+      "description": "This creature casts a spell of terror and confusion just before attacking its enemies."
+    },
+    {
+      "name": "Magic Jammer",
+      "description": "Discard 1 card from your hand to the Graveyard to negate the activation of a Spell Card and destroy it."
+    },
+    {
+      "name": "Ancient Lamp",
+      "description": "When this monster is attacked in face-down Defense Position, you can designate 1 opponent's monster as the attack's target instead. When this card is on the field, you can Special Summon \"La Jinn the Mystical Genie of the Lamp\" from your hand."
+    },
+    {
+      "name": "Mystical Moon",
+      "description": "A Beast-Warrior-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Witty Phantom",
+      "description": "Dressed in a night-black tuxedo, this creature presides over the darkness."
+    },
+    {
+      "name": "Terra the Terrible",
+      "description": "Known as a swamp dweller, this creature is a minion of the dark forces."
+    },
+    {
+      "name": "Dragoness the Wicked Knight",
+      "description": "\"Armaill\" + \"One-Eyed Shield Dragon\""
+    },
+    {
+      "name": "Mushroom Man #2",
+      "description": "A player controlling this monster loses 300 Life Points during each of his/her Standby Phases when this card is face-up on the field. Control of this card is shifted to your opponent by paying 500 Life Points at your own End Phase."
+    },
+    {
+      "name": "Nobleman of Crossout",
+      "description": "Destroy 1 face-down Monster Card and remove it from play. If the monster destroyed has a Flip Effect, both players must remove all Monster Cards of the same name from their respective Decks and remove them from play. The Decks are then shuffled."
+    },
+    {
+      "name": "The Fiend Megacyber",
+      "description": "If your opponent has 2 or more monsters than you have on the field, you can summon this card without offering any Tributes."
+    },
+    {
+      "name": "Giltia the D. Knight",
+      "description": "\"Guardian of the Labyrinth\" + \"Protector of the Throne\""
+    },
+    {
+      "name": "Maha Vailo",
+      "description": "In addition to the effects of Equip Cards, the ATK of this monster is increased by 500 points for each card equipped to this monster."
+    },
+    {
+      "name": "Anti-Spell Fragrance",
+      "description": "As long as this card remains face-up on the field, both players must first Set Spell Cards when they use them and cannot activate them until their next turn."
+    },
+    {
+      "name": "Neo the Magic Swordsman",
+      "description": "A dimensional drifter who not only practices sorcery, but is also a sword and martial arts master."
+    },
+    {
+      "name": "De-Spell",
+      "description": "Destroys 1 Spell Card on the field. If this card's target is face-down, flip it face-up. If the card is a Spell Card, it is destroyed. If not, it is returned to its face-down position. The flipped card is not activated."
+    },
+    {
+      "name": "Kojikocy",
+      "description": "A man-hunter with powerful arms that can crush boulders."
+    },
+    {
+      "name": "Chain Energy",
+      "description": "As long as this card remains face-up on the field, both you and your opponent must pay 500 Life Points per card to play or Set cards from your respective hands."
+    },
+    {
+      "name": "Man Eater",
+      "description": "Man-eating plant with poison feelers for attacking enemies."
+    },
+    {
+      "name": "Elegant Egotist",
+      "description": "When there are 1 or more \"Harpie Lady\" cards on the field, you can Special Summon 1 \"Harpie Lady\" or \"Harpie Lady Sisters\" card from your hand or your Deck."
+    },
+    {
+      "name": "Mammoth Graveyard",
+      "description": "A mammoth that protects the graves of its pack and is absolutely merciless when facing grave-robbers."
+    },
+    {
+      "name": "Blast Juggler",
+      "description": "Offer this card as a Tribute during your Standby Phase if face-up to destroy 2 face-up monsters with an ATK of 1000 or less."
+    },
+    {
+      "name": "Water Omotics",
+      "description": "Transforms the water overflowing from a jar into attacking dragons."
+    },
+    {
+      "name": "Water Magician",
+      "description": "This monster swamps an opponent with an almost endless supply of water."
+    },
+    {
+      "name": "High Tide Gyojin",
+      "description": "A very agile half-fish warrior known for its relentless attacks."
+    },
+    {
+      "name": "Three-Headed Geedo",
+      "description": "A three-headed nocturnal monster that is absolutely ruthless when fighting."
+    },
+    {
+      "name": "Witch's Apprentice",
+      "description": "As long as this card remains face-up on the field, increase the ATK of all DARK monsters by 500 points and decrease the ATK of all LIGHT monsters by 400 points."
+    },
+    {
+      "name": "Rabid Horseman",
+      "description": "\"Battle Ox\" + \"Mystic Horseman\""
+    },
+    {
+      "name": "Battle Ox",
+      "description": "A monster with tremendous power, it destroys enemies with a swing of its axe."
+    },
+    {
+      "name": "Musician King",
+      "description": "\"Witch of the Black Forest\" + \"Lady of Faith\""
+    },
+    {
+      "name": "Fiend Reflection #2",
+      "description": "A bird-beast that summons reinforcements with a hand mirror."
+    },
+    {
+      "name": "Milus Radiant",
+      "description": "As long as this card remains face-up on the field, increase the ATK of all EARTH monsters by 500 points and decrease the ATK of all WIND monsters by 400 points."
+    },
+    {
+      "name": "Muka Muka",
+      "description": "Increase the ATK and DEF of this card by 300 points for every card in your hand."
+    },
+    {
+      "name": "Violet Crystal",
+      "description": "A Zombie-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Guardian of the Labyrinth",
+      "description": "A monster that guards the entrance to the Netherworld."
+    },
+    {
+      "name": "Labyrinth Tank",
+      "description": "\"Giga-Tech Wolf\" + \"Cannon Soldier\""
+    },
+    {
+      "name": "Labyrinth Wall",
+      "description": "These walls form a labyrinth with no exit for enemies."
+    },
+    {
+      "name": "Cyber Saurus",
+      "description": "\"Blast Juggler\" + \"Two-Headed King Rex\""
+    },
+    {
+      "name": "Megasonic Eye",
+      "description": "Made of mysterious metal, this monster is a doomsday machine from the edge of the universe."
+    },
+    {
+      "name": "Mechanical Snail",
+      "description": "A cyborg snail that still travels at a slow pace."
+    },
+    {
+      "name": "Mechanicalchaser",
+      "description": "A hunter that relentlessly pursues its target by order of the Machine King."
+    },
+    {
+      "name": "Morphing Jar",
+      "description": "FLIP: Both you and your opponent discard all cards in your hands and draw 5 cards from your respective Decks."
+    },
+    {
+      "name": "Metalzoa",
+      "description": "This monster can only be Special Summoned from your Deck to your side of the field by offering \"Zoa\" equipped with \"Metalmorph\" as a Tribute."
+    },
+    {
+      "name": "Metal Dragon",
+      "description": "\"Steel Ogre Grotto #1\" + \"Lesser Dragon\""
+    },
+    {
+      "name": "Metal Fish",
+      "description": "A metal fish with a razor-sharp caudal fin."
+    },
+    {
+      "name": "Beast Fangs",
+      "description": "A Beast-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Forest",
+      "description": "Increases the ATK and DEF of all Insect, Beast, Plant, and Beast-Warrior-Type monsters by 200 points."
+    },
+    {
+      "name": "Wodan the Resident of the Forest",
+      "description": "Increase this card's ATK by 100 points for every Plant-Type monster that is face-up on the field."
+    },
+    {
+      "name": "Monster Egg",
+      "description": "A warrior hidden within an egg that attacks enemies by flinging eggshells."
+    },
+    {
+      "name": "Monster Recovery",
+      "description": "Select 1 of your own monsters on your side of the field and combine it with your Deck. At the same time, combine your hand and Deck together and shuffle the Deck. Draw the same number of cards that were in your hand from the shuffled Deck."
+    },
+    {
+      "name": "Yado Karu",
+      "description": "When this card is changed from Attack Position to Defense Position, you can place any number of cards from your hand at the bottom of your Deck in any order you desire."
+    },
+    {
+      "name": "Mountain",
+      "description": "Increases the ATK and DEF of all Dragon, Winged Beast, and Thunder-Type monsters by 200 points."
+    },
+    {
+      "name": "Yamadron",
+      "description": "This monster has three fire-breathing heads and can form a sea of blazing flames."
+    },
+    {
+      "name": "Yami",
+      "description": "Increases the ATK and DEF of all Fiend and Spellcaster-Type monsters by 200 points. Also decreases the ATK and DEF of all Fairy-Type monsters by 200 points."
+    },
+    {
+      "name": "Dark Energy",
+      "description": "A Fiend-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Castle of Dark Illusions",
+      "description": "FLIP: Increases the ATK and DEF of all Zombie-Type monsters by 200 points. As long as this card remains face-up on the field, the ATK and DEF of Zombie-Type monsters continues to increase by 200 points during each of your Standby Phases. This effect continues until your 4th turn after the card is activated."
+    },
+    {
+      "name": "Saggi the Dark Clown",
+      "description": "This clown appears from nowhere and executes very strange moves to avoid enemy attacks."
+    },
+    {
+      "name": "Darkness Approaches",
+      "description": "Discard 2 cards from your hand. Select 1 face-up monster and flip it face-down, but do not change its battle position."
+    },
+    {
+      "name": "Mask of Darkness",
+      "description": "FLIP: Select 1 Trap Card from your Graveyard and return it to your hand."
+    },
+    {
+      "name": "Sword of Dark Destruction",
+      "description": "A DARK monster equipped with this card increases its ATK by 400 points and decreases its DEF by 200 points."
+    },
+    {
+      "name": "King of Yamimakai",
+      "description": "Wields the power of darkness to destroy its enemies."
+    },
+    {
+      "name": "Dark-Piercing Light",
+      "description": "Flip all of your opponent's face-down Monster Cards on the field face-up. The effect of the monsters will activate at this time."
+    },
+    {
+      "name": "Yaranzo",
+      "description": "A treasure box containing a monster that attacks any unwary bandit."
+    },
+    {
+      "name": "Last Will",
+      "description": "If a monster of yours is sent from the field to the Graveyard during the turn that you've played this card, you can select a monster with an ATK of 1500 points or less from your Deck and play it as a Special Summon. Shuffle the Deck after playing the card. This card is active for 1 turn only."
+    },
+    {
+      "name": "Polymerization",
+      "description": "Fuses 2 or more Fusion-Material Monsters to form a new Fusion Monster."
+    },
+    {
+      "name": "UFO Turtle",
+      "description": "When this card is sent to the Graveyard as a result of battle, you may select 1 FIRE monster with an ATK of 1500 or less from your Deck and Special Summon it to the field in face-up Attack Position (no Tribute is required for monsters of Level 5 or more). The Deck is then shuffled."
+    },
+    {
+      "name": "The Cheerful Coffin",
+      "description": "You can discard up to 3 Monster Cards from your hand to the Graveyard."
+    },
+    {
+      "name": "Armored Zombie",
+      "description": "This warrior blindly swings a deadly blade with devastating force."
+    },
+    {
+      "name": "Ooguchi",
+      "description": "This monster may attack your opponent's Life Points directly."
+    },
+    {
+      "name": "Larvas",
+      "description": "A fast-moving, bird-like creature that strangles opposing monsters with its long, thin arms."
+    },
+    {
+      "name": "Larvae Moth",
+      "description": "This monster can only be Special Summoned by offering \"Petit Moth\" as a Tribute on the 2nd of your turns after \"Petit Moth\" has been equipped with \"Cocoon of Evolution\"."
+    },
+    {
+      "name": "Kaminari Attack",
+      "description": "\"Ocubeam\" + \"Mega Thunderball\""
+    },
+    {
+      "name": "Sanga of the Thunder",
+      "description": "Reduce the ATK of an opponent's monster attacking this card to 0. This effect can be used only once. The card's owner chooses when to activate this effect."
+    },
+    {
+      "name": "La Jinn the Mystical Genie of the Lamp",
+      "description": "A genie of the lamp that's at the beck and call of its master."
+    },
+    {
+      "name": "Little Chimera",
+      "description": "As long as this card remains face-up on the field, increase the ATK of all FIRE monsters by 500 points and decrease the ATK of all WATER monsters by 400 points."
+    },
+    {
+      "name": "Barrel Dragon",
+      "description": "Toss a coin 3 times. If 2 out of 3 results are Heads, destroy 1 monster on your opponent's side of the field. This card's effect can only be used during your own turn, once per turn."
+    },
+    {
+      "name": "Gaia the Dragon Champion",
+      "description": "\"Gaia The Fierce Knight\" + \"Curse of Dragon\""
+    },
+    {
+      "name": "Acid Trap Hole",
+      "description": "Flip 1 face-down Defense Position monster face-up. If the monster's DEF is 2000 points or less, the monster is destroyed. If the DEF is more than 2000 points, return the monster to its face-down Defense Position."
+    },
+    {
+      "name": "Green Phantom King",
+      "description": "This youthful king of the forests lives in a green world, abundant with trees and wildlife."
+    },
+    {
+      "name": "Beaver Warrior",
+      "description": "What this creature lacks in size it makes up for in defense when battling in the prairie."
+    },
+    {
+      "name": "Root Water",
+      "description": "An amphibian capable of calling up a massive tidal wave from the dark seas to wipe out enemy monsters."
+    },
+    {
+      "name": "7 Colored Fish",
+      "description": "A rare rainbow fish that has never been caught by mortal man."
+    },
+    {
+      "name": "Rainbow Flower",
+      "description": "This monster may attack your opponent's Life Points directly."
+    },
+    {
+      "name": "Laser Cannon Armor",
+      "description": "An Insect-Type monster equipped with this card increases its ATK and DEF by 300 points."
+    },
+    {
+      "name": "Leghul",
+      "description": "This monster may attack your opponent's Life Points directly."
+    },
+    {
+      "name": "Lesser Dragon",
+      "description": "A minor dragon incapable of breathing fire."
+    },
+    {
+      "name": "Red-Eyes B. Dragon",
+      "description": "A ferocious dragon with a deadly attack."
+    },
+    {
+      "name": "Tyhone #2",
+      "description": "A crimson dragon that spits fireballs to create a blazing sea of fire."
+    },
+    {
+      "name": "Red Medicine",
+      "description": "Increases your Life Points by 500 points."
+    },
+    {
+      "name": "Skull Guardian",
+      "description": "This monster can only be Ritual Summoned with the Ritual Spell Card, \"Novox's Prayer\". You must also offer monsters whose total Level Stars equal 7 or more as a Tribute from the field or your hand."
+    },
+    {
+      "name": "Novox's Prayer",
+      "description": "This card is used to Ritual Summon \"Skull Guardian\". You must also offer monsters whose total Level Stars equal 7 or more as a Tribute from the field or your hand."
+    },
+    {
+      "name": "Spellbinding Circle",
+      "description": "Select 1 monster. As long as this card remains face-up on the field, the selected monster cannot attack or change its battle position except by the effect of a Spell, Trap or Effect Monster Card. When the selected monster is destroyed, this card is also destroyed. If the selected monster is offered as a Tribute, this card is not destroyed."
+    },
+    {
+      "name": "Skull Servant",
+      "description": "A skeletal ghost that isn't strong but can mean trouble in large numbers."
+    },
+    {
+      "name": "Winged Dragon, Guardian of the Fortress #2",
+      "description": "This monster's wings are capable of generating tornadoes."
+    },
+    {
+      "name": "Uraby",
+      "description": "Fast on its feet, this dinosaur rips enemies to shreds with its sharp claws."
+    },
+    {
+      "name": "Remove Trap",
+      "description": "Destroys 1 face-up Trap Card on the field."
+    },
+    {
+      "name": "Waboku",
+      "description": "Any damage inflicted by an opponent's monster is decreased to 0 during the turn this card is activated."
+    },
+    {
+      "name": "One-Eyed Shield Dragon",
+      "description": "This dragon wears a shield not only for its own protection, but also for ramming its enemies."
+    },
+    {
+      "name": "Insect Monster Token",
+      "description": ""
+    },
+    {
+      "name": "Kuriboh Token",
+      "description": ""
+    },
+    {
+      "name": "Sheep Token",
+      "description": ""
+    },
+    {
+      "name": "Slime Token",
+      "description": ""
+    }
+  ]
+}
