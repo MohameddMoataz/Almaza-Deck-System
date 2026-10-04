@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { cookies } from "next/headers";
+import { Analytics } from "@vercel/analytics/next";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { getCurrentUser } from "@/lib/auth";
 import { localeCookieName, normalizeLocale, t } from "@/lib/i18n";
@@ -50,6 +51,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           </header>
           {children}
         </div>
+        <Analytics />
       </body>
     </html>
   );
