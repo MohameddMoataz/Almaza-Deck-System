@@ -1,8 +1,44 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import test from "node:test";
 import { reviewedArabicText, normalizeArabicCardTerms } from "../src/lib/arabicCardText";
 import { arabicReviewedEffects } from "../src/lib/arabicReviewedEffects";
 import { translationSource, finishArabicTranslation, translationChunks, ARABIC_TRANSLATION_VERSION } from "../src/lib/arabicTranslationRules";
+import { defaultSavedCardSets } from "../src/lib/savedSetData";
+
+test("Lotfy set card names and bundled legacy effects have reviewed Arabic", () => {
+  const lotfy = defaultSavedCardSets.find((set) => set.id === "lotfy-card-set");
+  assert.ok(lotfy, "Lotfy saved set should exist");
+
+  for (const card of lotfy.cards) {
+    assert.ok(reviewedArabicText(card.name), `Missing reviewed Arabic card name: ${card.name}`);
+  }
+
+  const powerOfChaosCards = JSON.parse(readFileSync(path.join("data", "power-of-chaos-kaiba-cards.json"), "utf8")) as Array<{
+    name: string;
+    description: string;
+  }>;
+  const lotfyNames = new Set(lotfy.cards.map((card) => card.name.toLowerCase()));
+  for (const card of powerOfChaosCards.filter((entry) => lotfyNames.has(entry.name.toLowerCase()))) {
+    assert.ok(reviewedArabicText(card.description), `Missing reviewed Lotfy effect: ${card.name}`);
+  }
+});
+
+test("Lotfy reviewed effects preserve mechanics rather than translating word-for-word", () => {
+  const soulExchange = reviewedArabicText(
+    "Select an opponent's monster and use it as a Tribute in place of one of your own. You must skip your Battle Phase for the turn in which this card is activated."
+  );
+  assert.ok(soulExchange?.includes("تضحية"));
+  assert.ok(soulExchange?.includes("تتخطى مرحلة المعركة"));
+
+  const thunderDragon = reviewedArabicText(
+    "Discard this card from your hand to the Graveyard to add up to 2 \"Thunder Dragon\" cards from your Deck to your hand. Your Deck is then shuffled. This effect is activated only during a Main Phase."
+  );
+  assert.ok(thunderDragon?.includes("تخلّص"));
+  assert.ok(thunderDragon?.includes("ما يصل إلى بطاقتي"));
+  assert.ok(thunderDragon?.includes("مرحلة رئيسية"));
+});
 
 test("prepared effects match CRLF and smart quotes without network calls", () => {
   for (const [source, translation] of Object.entries(arabicReviewedEffects)) {

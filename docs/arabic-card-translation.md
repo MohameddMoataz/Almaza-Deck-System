@@ -52,4 +52,6 @@ Add source-matched effects to `src/lib/arabicReviewedEffects.ts`. Use `arabicEff
 
 Free translation APIs do not accept instruction prompts. Contextual rewrites skip quoted names. Numeric checks catch changed stats, but do not prove semantic accuracy; 1 and 2 often become inflected Arabic words. Unknown effects remain labeled automatic, with their originals accessible.
 
+The Lotfy saved set has reviewed Arabic display names for every card. Its effects from the bundled Power of Chaos card data are reviewed by exact source text; `tests/arabic-translations.test.ts` checks that both sets of translations remain complete.
+
 Run `pnpm test:translations`. Optional live check: `pnpm exec tsx scripts/check-arabic-provider.ts` (external requests, no database changes).
